@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "title": "Lívia Devolder | Full Stack Developer",
+    "description": "Lívia Devolder Profissional Portfolio"
+  },
+  "nav": {
+    "title": "Lívia Devolder",
+    "language": "Language"
+  },
+  "intro": {
+    "title": "Full Stack Developer",
+    "quote": "\"No one is so big that they can't learn, nor so small that they can't teach.\"",
+    "author": "- Aesop"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm Lívia, a full stack developer with over 4 years of experience working with technologies like <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>React</strong>, and <strong>WordPress</strong>.<br></br><br></br>I value well-structured technical development with attention to user experience and clear communication. I believe great projects are born from listening, collaboration, and solutions designed with empathy.",
+    "education": {
+      "course": "Technology in Computer Systems",
+      "university": "Fluminense Federal University",
+      "duration": "2021 - 2023"
+    },
+    "languages": {
+      "portuguese": {
+        "title": "Portuguese",
+        "level": "Native"
+      },
+      "english": {
+        "title": "English",
+        "level": "Advanced"
+      },
+      "spanish": {
+        "title": "Spanish",
+        "level": "Basic"
+      }
+    },
+    "experience": {
+      "brq": {
+        "title": "BRQ Digital Solutions",
+        "role": "Trainee - Junior Developer",
+        "duration": "Jun 2021 - Aug 2023",
+        "description": "Responsible for developing and maintaining web applications, specifically in Renault Group's e-commerce projects, as a full stack developer."
+      },
+      "clearsale": {
+        "title": "ClearSale",
+        "role": "Junior Developer",
+        "duration": "Aug 2023 - Nov 2024",
+        "description": "Responsible for developing and maintaining web applications and scrapping services for various platforms, working on the back-end."
+      },
+      "deal": {
+        "title": "Deal Technologies",
+        "role": "Mid-level Developer",
+        "duration": "Nov 2024 - Present",
+        "description": "Responsible for developing and maintaining web applications for various clients, including B3 and Porto Seguro."
+      }
+    }
+  },
+  "services": {
+    "title": "Services",
+    "web": {
+      "title": "Web Development",
+      "description": "Creation of scalable systems, REST APIs and robust solutions using Next.js, NestJS, MongoDB and AWS. Ideal for complex applications or cloud integrations."
+    },
+    "pwa": {
+      "title": "Scalable PWAs",
+      "description": "Progressive web and mobile applications using Firebase, Next.js and integrated authentication. Perfect for MVPs or lean products."
+    },
+    "company": {
+      "title": "Corporate Websites",
+      "description": "Beautiful, lightweight and objective websites for companies, professionals or local businesses, with good performance and basic SEO."
+    },
+    "hearing": {
+      "title": "Human-Centered Approach",
+      "description": "Empathetic communication, active listening, and a focus on turning ideas into personalized digital products. You speak, I translate into code."
+    }
+  },
+  "footer": {
+    "text": "© 2025 Lívia Devolder. All rights reserved.",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/livia-devolder-pinheiro/",
+      "github": "https://github.com/LiviaDevolder",
+      "email": "mailto:liviadevolder@gmail.com"
+    }
+  }
+}

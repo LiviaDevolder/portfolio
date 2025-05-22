@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "title": "Lívia Devolder | Desenvolvedora Full Stack",
+    "description": "Portfólio profissional de Lívia Devolder"
+  },
+  "nav": {
+    "title": "Lívia Devolder",
+    "language": "Idioma"
+  },
+  "intro": {
+    "title": "Desenvolvedora FullStack",
+    "quote": "\"Ninguém é tão grande que não possa aprender, nem tão pequeno que não possa ensinar\"",
+    "author": "- Esopo"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "description": "Sou Lívia, desenvolvedora full stack com mais de 4 anos de experiência com tecnologias como <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>React</strong> e <strong>WordPress</strong>.<br></br><br></br>Valorizo um desenvolvimento técnico bem estruturado, com atenção à experiência do usuário e uma comunicação clara. Acredito que bons projetos nascem da escuta, da colaboração e de soluções pensadas com empatia.",
+    "education": {
+      "course": "Tecnologia em Sistemas da Computação",
+      "university": "Universidade Federal Fluminense",
+      "duration": "2021 - 2023"
+    },
+    "languages": {
+      "portuguese": {
+        "title": "Português",
+        "level": "Nativo"
+      },
+      "english": {
+        "title": "Inglês",
+        "level": "Avançado"
+      },
+      "spanish": {
+        "title": "Espanhol",
+        "level": "Básico"
+      }
+    },
+    "experience": {
+      "brq": {
+        "title": "BRQ Digital Solutions",
+        "role": "Desenvolvedor Trainee - Junior",
+        "duration": "Jun 2021 - Ago 2023",
+        "description": "Responsável por desenvolver e manter aplicações web, especificamente nos e-commerces do Grupo Renault, como full-stack."
+      },
+      "clearsale": {
+        "title": "ClearSale",
+        "role": "Desenvolvedor Junior",
+        "duration": "Ago 2023 - Nov 2024",
+        "description": "Responsável por desenvolver e manter aplicações web e serviços de scrapping de plataformas como back-end."
+      },
+      "deal": {
+        "title": "Deal Technologies",
+        "role": "Desenvolvedor Pleno",
+        "duration": "Nov 2024 - Atualmente",
+        "description": "Responsável por desenvolver e manter aplicações web de diferentes clientes, como B3 e Porto Seguro."
+      }
+    }
+  },
+  "services": {
+    "title": "Serviços",
+    "web": {
+      "title": "Desenvolvimento Web",
+      "description": "Criação de sistemas escaláveis, APIs REST e soluções robustas com Next.js, NestJS, MongoDB e AWS. Ideal para aplicações complexas ou integrações com nuvem."
+    },
+    "pwa": {
+      "title": "PWAs Escaláveis",
+      "description": "Aplicações progressivas para web e mobile com Firebase, Next.js e autenticação integrada. Perfeito para MVPs ou produtos enxutos."
+    },
+    "company": {
+      "title": "Sites Institucionais",
+      "description": "Sites bonitos, leves e objetivos para empresas, profissionais ou negócios locais, com boa performance e SEO básico."
+    },
+    "hearing": {
+      "title": "Atendimento Humanizado",
+      "description": "Comunicação empática, escuta ativa e foco em transformar ideias em produtos digitais personalizados. Você fala, eu traduzo para o código."
+    }
+  },
+  "footer": {
+    "text": "© 2025 Lívia Devolder. Todos os direitos reservados.",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/livia-devolder-pinheiro/",
+      "github": "https://github.com/LiviaDevolder",
+      "email": "mailto:liviadevolder@gmail.com"
+    }
+  }
+}

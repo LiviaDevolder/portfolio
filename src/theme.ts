@@ -11,8 +11,8 @@ const config = defineConfig({
         gold: { value: "#E5C3A6" },
       },
       fonts: {
-        dislpay: { value: "var(--font-cormorant-garamond)" },
-        body: { value: "var(--font-poppins)" },
+        dislpay: { value: "var(--font-cormorant-garamond), 'serif'" },
+        body: { value: "var(--font-poppins), 'sans-serif'" },
       },
       fontSizes: {
         sm: { value: "12px" },

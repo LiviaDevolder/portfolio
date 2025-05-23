@@ -31,7 +31,7 @@ export default function Education({
         <Text
           color={variant === EDUCATION_VARIANT_TYPE.GOLD ? "purple" : "white"}
           fontFamily={"display"}
-          fontSize={{ base: "lg", sm: "lg", md: "xl", lg: "xl", xl: "xl" }}
+          fontSize={{ base: "md", sm: "md", md: "lg", lg: "lg", xl: "lg" }}
           fontWeight={"700"}
         >
           {title}
@@ -44,14 +44,16 @@ export default function Education({
           {description}
         </Text>
       </Flex>
-      <Text
-        color={"white"}
-        fontFamily={"body"}
-        fontSize={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
-        textWrap={"nowrap"}
-      >
-        {duration}
-      </Text>
+      {duration ? (
+        <Text
+          color={"white"}
+          fontFamily={"body"}
+          fontSize={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
+          textWrap={"nowrap"}
+        >
+          {duration}
+        </Text>
+      ) : null}
     </Flex>
   );
 }

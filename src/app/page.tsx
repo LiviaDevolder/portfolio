@@ -263,12 +263,12 @@ export default function Home() {
                 />
                 <Education
                   title={t("about.languages.english.title")}
-                  description={t("about.languages.portuguese.level")}
+                  description={t("about.languages.english.level")}
                   variant={EDUCATION_VARIANT_TYPE.PURPLE}
                 />
                 <Education
                   title={t("about.languages.spanish.title")}
-                  description={t("about.languages.portuguese.level")}
+                  description={t("about.languages.spanish.level")}
                   variant={EDUCATION_VARIANT_TYPE.PURPLE}
                 />
               </Flex>
@@ -358,7 +358,7 @@ export default function Home() {
               <Flex>
                 <Computer />
               </Flex>
-              <Text color={"white"} fontFamily={"display"} fontSize={"xl"}>
+              <Text fontFamily={"display"} fontSize={"xl"}>
                 {t("services.web.title")}
               </Text>
             </Flex>
@@ -374,7 +374,7 @@ export default function Home() {
               <Flex>
                 <Phone />
               </Flex>
-              <Text color={"white"} fontFamily={"display"} fontSize={"xl"}>
+              <Text fontFamily={"display"} fontSize={"xl"}>
                 {t("services.pwa.title")}
               </Text>
             </Flex>
@@ -390,7 +390,7 @@ export default function Home() {
               <Flex>
                 <Company />
               </Flex>
-              <Text color={"white"} fontFamily={"display"} fontSize={"xl"}>
+              <Text fontFamily={"display"} fontSize={"xl"}>
                 {t("services.company.title")}
               </Text>
             </Flex>
@@ -406,7 +406,7 @@ export default function Home() {
               <Flex>
                 <Ear />
               </Flex>
-              <Text color={"white"} fontFamily={"display"} fontSize={"xl"}>
+              <Text fontFamily={"display"} fontSize={"xl"}>
                 {t("services.hearing.title")}
               </Text>
             </Flex>

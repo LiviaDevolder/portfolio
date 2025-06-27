@@ -11,8 +11,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
-import NextImage from "next/image";
+import NextImage, { StaticImageData } from "next/image";
 import Profile from "../../public/profile.png";
+import Scraper from "../../public/projects/scraper.png";
+import Donna from "../../public/projects/donna.png";
+import Renault from "../../public/projects/renault.png";
+import BoraLa from "../../public/projects/borala.png";
 import Computer from "../../public/computer.svg";
 import Phone from "../../public/phone.svg";
 import Company from "../../public/company.svg";
@@ -25,8 +29,16 @@ import Github from "../../public/github.svg";
 import Badge from "@/components/Badge";
 import Card from "@/components/Card";
 import Education from "@/components/Education";
-import { EDUCATION_VARIANT_TYPE } from "@/enum";
-import { useEffect } from "react";
+import { EDUCATION_VARIANT_TYPE, PROJECTS_TYPE, ProjectsType } from "@/enum";
+import { ReactNode, useEffect, useState } from "react";
+import Tab from "@/components/Tab";
+
+interface IProjects {
+  title: string;
+  image: StaticImageData;
+  description: ReactNode;
+  badges: string[];
+}
 
 export default function Home() {
   const t = useTranslations();
@@ -47,6 +59,76 @@ export default function Home() {
       descriptionMeta.setAttribute("content", t("metadata.description"));
     }
   }, [t]);
+
+  const [selectedProject, setSelectedProject] = useState<ProjectsType>(
+    PROJECTS_TYPE.SCRAPER
+  );
+
+  const projectsRecord: Record<ProjectsType, IProjects> = {
+    [PROJECTS_TYPE.SCRAPER]: {
+      title: t("projects.data.scraper.title"),
+      image: Scraper,
+      description: t.rich("projects.data.scraper.description", {
+        br: () => <br />,
+      }),
+      badges: [
+        "Puppeteer",
+        "Playwright",
+        "Cheerio",
+        "Crawlee",
+        "Apify",
+        "Axios",
+      ],
+    },
+    [PROJECTS_TYPE.DONNA]: {
+      title: t("projects.data.donna.title"),
+      image: Donna,
+      description: t.rich("projects.data.donna.description", {
+        br: () => <br />,
+      }),
+      badges: [
+        "Next.js",
+        "Chkra UI",
+        "WordPress",
+        "WooCommerce",
+        "Mercado Pago",
+        "Brevo",
+        "Vercel",
+        "Hostgator",
+      ],
+    },
+    [PROJECTS_TYPE.RENAULT]: {
+      title: t("projects.data.renault.title"),
+      image: Renault,
+      description: t.rich("projects.data.renault.description", {
+        br: () => <br />,
+      }),
+      badges: [
+        "TypeScript",
+        "CSS",
+        "PostgreSQL",
+        "Nest.js",
+        "Next.js",
+        "Chakra UI",
+      ],
+    },
+    [PROJECTS_TYPE.BORALA]: {
+      title: t("projects.data.borala.title"),
+      image: BoraLa,
+      description: t.rich("projects.data.borala.description", {
+        br: () => <br />,
+      }),
+      badges: [
+        "TypeScript",
+        "Vercel",
+        "Firebase",
+        "Google Cloud Plataform",
+        "Nest.js",
+        "Next.js",
+        "Chakra UI",
+      ],
+    },
+  };
 
   return (
     <Flex
@@ -413,6 +495,80 @@ export default function Home() {
             <Text fontFamily={"body"} fontSize={"md"}>
               {t("services.hearing.description")}
             </Text>
+          </Flex>
+        </Flex>
+      </Flex>
+      {/* Projects */}
+      <Flex
+        width={"100%"}
+        flexDirection={"column"}
+        px={{ base: "16px", sm: "24px", md: "48px", lg: "140px", xl: "200px" }}
+        py={{ base: "24px", sm: "24px", md: "24px", lg: "36px", xl: "36px" }}
+        gap={"24px"}
+      >
+        <Text
+          color={"gold"}
+          fontFamily={"display"}
+          fontSize={{ base: "xl", sm: "xl", md: "xxl", lg: "xxl", xl: "xxl" }}
+        >
+          {t("projects.title")}
+        </Text>
+        <Flex
+          width={"100%"}
+          flexDirection={{
+            base: "column",
+            sm: "column",
+            md: "column",
+            lg: "row",
+            xl: "row",
+          }}
+          gap={"24px"}
+        >
+          <Flex flexDir={"column"} gap={"12px"}>
+            {Object.entries(projectsRecord).map(([key, project], index) => (
+              <Tab
+                key={index}
+                active={key === selectedProject}
+                onClick={() => setSelectedProject(key as ProjectsType)}
+              >
+                {project.title}
+              </Tab>
+            ))}
+          </Flex>
+          <Flex
+            width={"100%"}
+            gap={"24px"}
+            flexWrap="wrap"
+            alignItems="flex-start"
+          >
+            <Flex
+              flex="1 1 400px"
+              maxWidth={{ base: "100%", xl: "610px" }}
+              minWidth="320px"
+            >
+              <NextImage
+                src={projectsRecord[selectedProject].image}
+                alt={projectsRecord[selectedProject].title}
+                width={610}
+                height={400}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 610px"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
+              />
+            </Flex>
+
+            <Flex flexDir={"column"} gap={"12px"} flex="1 1 400px" w={"auto"}>
+              <Text color={{ base: "blue", _dark: "white" }}>
+                {projectsRecord[selectedProject].description}
+              </Text>
+              <Flex flexWrap={"wrap"} gap={"8px"}>
+                {projectsRecord[selectedProject].badges.map((badge, index) => {
+                  return <Badge key={index}>{badge}</Badge>;
+                })}
+              </Flex>
+            </Flex>
           </Flex>
         </Flex>
       </Flex>

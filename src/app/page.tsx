@@ -47,7 +47,7 @@ export default function Home() {
     items: [
       { label: "Português", value: "pt-BR" },
       { label: "English", value: "en-US" },
-      { label: "Spanish", value: "es-ES" },
+      { label: "Español", value: "es-ES" },
     ],
   });
   const { locale, setLocale } = useLocaleContext();

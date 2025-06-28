@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "title": "Lívia Devolder | Desarrolladora Full Stack",
+    "description": "Portfolio profesional de Lívia Devolder"
+  },
+  "nav": {
+    "title": "Lívia Devolder",
+    "language": "Idioma"
+  },
+  "intro": {
+    "title": "Desarrolladora Full Stack",
+    "quote": "\"Nadie es tan grande que no pueda aprender, ni tan pequeño que no pueda enseñar\"",
+    "author": "- Esopo"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "description": "Soy Lívia, desarrolladora full stack con más de 4 años de experiencia en tecnologías como <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>React</strong> y <strong>WordPress</strong>.<br></br><br></br>Valoro un desarrollo técnico bien estructurado, con atención a la experiencia de usuario y una comunicación clara. Creo que los buenos proyectos nacen de la escucha, la colaboración y soluciones pensadas con empatía.",
+    "education": {
+      "course": "Tecnología en Sistemas de Computación",
+      "university": "Universidad Federal Fluminense",
+      "duration": "2021 - 2023"
+    },
+    "languages": {
+      "portuguese": {
+        "title": "Portugués",
+        "level": "Nativo"
+      },
+      "english": {
+        "title": "Inglés",
+        "level": "Avanzado"
+      },
+      "spanish": {
+        "title": "Español",
+        "level": "Básico"
+      }
+    },
+    "experience": {
+      "brq": {
+        "title": "BRQ Digital Solutions",
+        "role": "Desarrolladora Trainee - Junior",
+        "duration": "Jun 2021 - Ago 2023",
+        "description": "Responsable de desarrollar y mantener aplicaciones web, específicamente en los e-commerces del Grupo Renault, como full-stack."
+      },
+      "clearsale": {
+        "title": "ClearSale",
+        "role": "Desarrolladora Junior",
+        "duration": "Ago 2023 - Nov 2024",
+        "description": "Responsable de desarrollar y mantener aplicaciones web y servicios de scraping de plataformas como back-end."
+      },
+      "deal": {
+        "title": "Deal Technologies",
+        "role": "Desarrolladora Pleno",
+        "duration": "Nov 2024 - Actualmente",
+        "description": "Responsable de desarrollar y mantener aplicaciones web de diferentes clientes, como B3 y Porto Seguro."
+      }
+    }
+  },
+  "services": {
+    "title": "Servicios",
+    "web": {
+      "title": "Desarrollo Web",
+      "description": "Creación de sistemas escalables, APIs REST y soluciones robustas con Next.js, NestJS, MongoDB y AWS. Ideal para aplicaciones complejas o integraciones en la nube."
+    },
+    "pwa": {
+      "title": "PWAs Escalables",
+      "description": "Aplicaciones web progresivas para web y móvil con Firebase, Next.js y autenticación integrada. Perfecto para MVPs o productos lean."
+    },
+    "company": {
+      "title": "Sitios Web Corporativos",
+      "description": "Sitios web atractivos, ligeros y directos para empresas, profesionales o negocios locales, con buen rendimiento y SEO básico."
+    },
+    "hearing": {
+      "title": "Atención Personalizada",
+      "description": "Comunicación empática, escucha activa y enfoque en transformar ideas en productos digitales personalizados. Tú hablas, yo lo traduzco a código."
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "data": {
+      "scraper": {
+        "title": "Automatizaciones",
+        "description": "Construyo puentes entre la información dispersa en la web y el valor estratégico para tu negocio. Con experiencia en automatización y web scraping, desarrollo bots a medida que navegan, extraen y estructuran datos con alta precisión y eficiencia.<br></br><br></br>Ya sea un sitio protegido por CAPTCHAs, una aplicación de página única (SPA) con scroll infinito o la necesidad de recopilar millones de puntos de datos diariamente, tengo la experiencia y las herramientas adecuadas para el trabajo."
+      },
+      "donna": {
+        "title": "Donna Plus Size al por Mayor",
+        "description": "Desarrollé una plataforma de e-commerce B2B de alto rendimiento con el objetivo de modernizar la experiencia de compra mayorista y simplificar la gestión de productos para el cliente.<br></br><br></br>Utilizando una arquitectura headless, construí un front-end ágil y optimizado para SEO con Next.js y Chakra UI. El back-end aprovecha la robustez de WordPress con WooCommerce, permitiendo que el equipo gestione el catálogo y los pedidos a través de un panel familiar, mientras los clientes disfrutan de un sitio web ultrarrápido.<br></br><br></br>El proyecto incluye integración completa con Mercado Pago para pagos seguros y automatización de correos electrónicos transaccionales (confirmación de pedido, envío, etc.) a través de Brevo."
+      },
+      "renault": {
+        "title": "Tienda Renault",
+        "description": "Participé activamente en el equipo de desarrollo de la \"Tienda Renault\", una plataforma de e-commerce a gran escala diseñada para la venta de vehículos nuevos en varios países de América Latina.<br></br><br></br>Como parte del equipo, colaboré en la construcción de una solución full-stack robusta y escalable. Mis responsabilidades incluyeron el desarrollo de componentes reutilizables en el front-end con Next.js y Chakra UI, y la implementación de endpoints y lógicas de negocio en la API back-end con Nest.js.<br></br><br></br>Trabajé directamente con TypeScript en todo el stack para garantizar la calidad y la mantenibilidad del código, además de ayudar en el modelado e integración con la base de datos PostgreSQL. El proyecto requirió un enfoque especial en la internacionalización (i18n) para adaptar la experiencia de compra a cada mercado específico."
+      },
+      "borala": {
+        "title": "¡Bora Lá!",
+        "description": "Trabajé en el desarrollo del proyecto \"¡Bora Lá!\", una solución completa que incluye un panel de administración y dos aplicaciones móviles (PWA). Fui responsable de crear una experiencia unificada y eficiente para diferentes perfiles de usuario.<br></br><br></br>En el front-end, utilicé Next.js para construir tanto el panel de control como las PWA, garantizando el rendimiento y la capacidad de instalación en dispositivos móviles. La interfaz se desarrolló con Chakra UI para mantener la consistencia visual. Para el back-end y la infraestructura, implementé una API con Nest.js y utilicé los servicios de Firebase (como Authentication y Firestore) y Google Cloud Platform (GCP) para garantizar la escalabilidad y la seguridad de los datos."
+      }
+    }
+  },
+  "footer": {
+    "text": "© 2025 Lívia Devolder. Todos los derechos reservados.",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/livia-devolder-pinheiro/",
+      "github": "https://github.com/LiviaDevolder",
+      "email": "mailto:liviadevolder@gmail.com"
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { createContext, ReactNode, useContext, useState } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import enUsMessages from "@/messages/en-US.json";
 import ptBrMessages from "@/messages/pt-BR.json";
+import esEsMessages from "@/messages/es-ES.json";
 
 type LocaleContextType = {
   locale: string;
@@ -16,6 +17,7 @@ const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 const messagesMap: Record<string, any> = {
   "en-US": enUsMessages,
   "pt-BR": ptBrMessages,
+  "es-ES": esEsMessages,
 };
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
@@ -24,7 +26,11 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   return (
     <LocaleContext.Provider value={{ locale, setLocale }}>
-      <NextIntlClientProvider timeZone={timeZone} locale={locale} messages={messagesMap[locale]}>
+      <NextIntlClientProvider
+        timeZone={timeZone}
+        locale={locale}
+        messages={messagesMap[locale]}
+      >
         {children}
       </NextIntlClientProvider>
     </LocaleContext.Provider>

@@ -25,14 +25,19 @@ export interface UseColorModeReturn {
 
 export function useColorMode(): UseColorModeReturn {
   const { resolvedTheme, setTheme } = useTheme()
-  const toggleColorMode = () => {
+
+  const toggleColorMode = React.useCallback(() => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark")
-  }
-  return {
-    colorMode: resolvedTheme as ColorMode,
-    setColorMode: setTheme,
-    toggleColorMode,
-  }
+  }, [resolvedTheme, setTheme])
+
+  return React.useMemo(
+    () => ({
+      colorMode: resolvedTheme as ColorMode,
+      setColorMode: setTheme,
+      toggleColorMode,
+    }),
+    [resolvedTheme, setTheme, toggleColorMode],
+  )
 }
 
 export function useColorModeValue<T>(light: T, dark: T) {
@@ -59,14 +64,9 @@ export const ColorModeButton = React.forwardRef<
         variant="ghost"
         aria-label="Toggle color mode"
         size="sm"
+        fontSize="xl"
         ref={ref}
         {...props}
-        css={{
-          _icon: {
-            width: "5",
-            height: "5",
-          },
-        }}
       >
         <ColorModeIcon />
       </IconButton>

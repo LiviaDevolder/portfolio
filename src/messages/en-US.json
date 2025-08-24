@@ -16,9 +16,16 @@
     "title": "About Me",
     "description": "I'm Lívia, a full stack developer with over 4 years of experience working with technologies like <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>React</strong>, and <strong>WordPress</strong>.<br></br><br></br>I value well-structured technical development with attention to user experience and clear communication. I believe great projects are born from listening, collaboration, and solutions designed with empathy.",
     "education": {
-      "course": "Technology in Computer Systems",
-      "university": "Fluminense Federal University",
-      "duration": "2021 - 2023"
+      "graduation": {
+        "course": "Technology in Computer Systems",
+        "university": "Fluminense Federal University",
+        "duration": "2021 - 2023"
+      },
+      "mba": {
+        "course": "MBA in Software Engineering with AI",
+        "university": "Full Cycle",
+        "duration": "Oct 2025 - Oct 2026"
+      }
     },
     "languages": {
       "portuguese": {
@@ -50,8 +57,14 @@
       "deal": {
         "title": "Deal Technologies",
         "role": "Mid-level Developer",
-        "duration": "Nov 2024 - Present",
+        "duration": "Nov 2024 - Jul 2025",
         "description": "Responsible for developing and maintaining web applications for various clients, including B3 and Porto Seguro."
+      },
+      "brq-2": {
+        "title": "BRQ Digital Solutions",
+        "role": "Mid-level Developer",
+        "duration": "Jul 2025 - Currently",
+        "description": "Responsible for developing and maintaining web applications, specifically in Renault Group's after-sales systems, as a full-stack developer."
       }
     }
   },

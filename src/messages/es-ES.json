@@ -16,9 +16,16 @@
     "title": "Sobre Mí",
     "description": "Soy Lívia, desarrolladora full stack con más de 4 años de experiencia en tecnologías como <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>React</strong> y <strong>WordPress</strong>.<br></br><br></br>Valoro un desarrollo técnico bien estructurado, con atención a la experiencia de usuario y una comunicación clara. Creo que los buenos proyectos nacen de la escucha, la colaboración y soluciones pensadas con empatía.",
     "education": {
-      "course": "Tecnología en Sistemas de Computación",
-      "university": "Universidad Federal Fluminense",
-      "duration": "2021 - 2023"
+      "graduation": {
+        "course": "Tecnología en Sistemas de Computación",
+        "university": "Universidad Federal Fluminense",
+        "duration": "2021 - 2023"
+      },
+      "mba": {
+        "course": "MBA en Ingeniería de Software con IA",
+        "university": "Full Cycle",
+        "duration": "Oct 2025 - Oct 2026"
+      }
     },
     "languages": {
       "portuguese": {
@@ -50,8 +57,14 @@
       "deal": {
         "title": "Deal Technologies",
         "role": "Desarrolladora Pleno",
-        "duration": "Nov 2024 - Actualmente",
+        "duration": "Nov 2024 - Jul 2025",
         "description": "Responsable de desarrollar y mantener aplicaciones web de diferentes clientes, como B3 y Porto Seguro."
+      },
+      "brq-2": {
+        "title": "BRQ Digital Solutions",
+        "role": "Desarrolladora Pleno",
+        "duration": "Jul 2025 - Actualmente",
+        "description": "Responsable de desarrollar y mantener aplicaciones web, específicamente en el posventa del Grupo Renault, como full-stack."
       }
     }
   },

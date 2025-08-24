@@ -1,5 +1,6 @@
 import { Text, Flex } from "@chakra-ui/react";
 import Badge from "./Badge";
+import { memo } from "react";
 
 interface ICard {
   title: string;
@@ -9,30 +10,24 @@ interface ICard {
   badges: string[];
 }
 
-export default function Card({
-  title,
-  description,
-  role,
-  duration,
-  badges,
-}: ICard) {
+function CardComponent({ title, description, role, duration, badges }: ICard) {
   return (
     <Flex
-      p={"16px"}
+      p={4}
       bgColor={"gray"}
       color={{ base: "white", _dark: "blue" }}
-      fontSize={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
+      fontSize={{ base: "sm", md: "md" }}
       flexDir={"column"}
-      borderRadius={"4px"}
+      borderRadius={"sm"}
       maxW={"620px"}
-      gap={"12px"}
+      gap={3}
     >
       <Flex justifyContent={"space-between"} alignItems={"center"}>
         <Flex flexDir={"column"}>
           <Text
             color={{ base: "white", _dark: "blue" }}
             fontFamily={"display"}
-            fontSize={{ base: "lg", sm: "lg", md: "xl", lg: "xl", xl: "xl" }}
+            fontSize={{ base: "lg", md: "xl" }}
             fontWeight={"700"}
           >
             {title}
@@ -40,7 +35,7 @@ export default function Card({
           <Text
             color={"purple"}
             fontFamily={"body"}
-            fontSize={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
+            fontSize={{ base: "sm", md: "md" }}
           >
             {role}
           </Text>
@@ -48,34 +43,27 @@ export default function Card({
         <Text
           color={{ base: "white", _dark: "blue" }}
           fontFamily={"body"}
-          fontSize={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
+          fontSize={{ base: "sm", md: "md" }}
         >
           {duration}
         </Text>
       </Flex>
-      <Flex
-        gap={"16px"}
-        flexDirection={{
-          base: "column",
-          sm: "column",
-          md: "column",
-          lg: "row",
-          xl: "row",
-        }}
-      >
+      <Flex gap={4} flexDirection={{ base: "column", lg: "row" }}>
         <Text
           color={{ base: "white", _dark: "blue" }}
           fontFamily={"body"}
-          fontSize={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
+          fontSize={{ base: "sm", md: "md" }}
         >
           {description}
         </Text>
-        <Flex flexWrap={"wrap"} gap={"8px"}>
-          {badges.map((badge, index) => {
-            return <Badge key={index}>{badge}</Badge>;
-          })}
+        <Flex flexWrap={"wrap"} gap={2}>
+          {badges.map((badge) => (
+            <Badge key={badge}>{badge}</Badge>
+          ))}
         </Flex>
       </Flex>
     </Flex>
   );
 }
+
+export default memo(CardComponent);

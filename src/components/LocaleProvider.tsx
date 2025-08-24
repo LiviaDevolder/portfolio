@@ -1,7 +1,13 @@
 "use client";
 
-import { createContext, ReactNode, useContext, useState } from "react";
-import { NextIntlClientProvider } from "next-intl";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useState,
+  useMemo,
+} from "react";
+import { NextIntlClientProvider, AbstractIntlMessages } from "next-intl";
 import enUsMessages from "@/messages/en-US.json";
 import ptBrMessages from "@/messages/pt-BR.json";
 import esEsMessages from "@/messages/es-ES.json";
@@ -13,8 +19,7 @@ type LocaleContextType = {
 
 const LocaleContext = createContext<LocaleContextType | undefined>(undefined);
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const messagesMap: Record<string, any> = {
+const messagesMap: Record<string, AbstractIntlMessages> = {
   "en-US": enUsMessages,
   "pt-BR": ptBrMessages,
   "es-ES": esEsMessages,
@@ -24,8 +29,10 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState("pt-BR");
   const timeZone = "America/Sao_Paulo";
 
+  const contextValue = useMemo(() => ({ locale, setLocale }), [locale]);
+
   return (
-    <LocaleContext.Provider value={{ locale, setLocale }}>
+    <LocaleContext.Provider value={contextValue}>
       <NextIntlClientProvider
         timeZone={timeZone}
         locale={locale}

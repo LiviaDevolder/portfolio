@@ -1,5 +1,6 @@
 import { Text, Flex } from "@chakra-ui/react";
 import { EDUCATION_VARIANT_TYPE, EducationVariantType } from "@/enum";
+import { memo } from "react";
 
 interface IEducation {
   title: string;
@@ -8,52 +9,58 @@ interface IEducation {
   variant: EducationVariantType;
 }
 
-export default function Education({
+function EducationComponent({
   title,
   description,
   duration,
   variant,
 }: IEducation) {
+  const isGold = variant === EDUCATION_VARIANT_TYPE.GOLD;
+  const bgColor = isGold ? "gold" : "purple";
+  const titleColor = isGold ? "purple" : "white";
+  const descriptionColor = isGold ? "white" : "gold";
+
   return (
     <Flex
-      p={"16px"}
-      bgColor={variant === EDUCATION_VARIANT_TYPE.GOLD ? "gold" : "purple"}
-      fontSize={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
+      p={4}
+      bgColor={bgColor}
+      fontSize={{ base: "sm", md: "md" }}
       flexDir={"row"}
-      borderRadius={"4px"}
-      gap={"12px"}
+      borderRadius={"sm"}
+      gap={3}
       justifyContent={"space-between"}
       alignItems={"center"}
       w={"100%"}
-      maxW={"max-content"}
     >
       <Flex flexDir={"column"} w={"100%"}>
         <Text
-          color={variant === EDUCATION_VARIANT_TYPE.GOLD ? "purple" : "white"}
+          color={titleColor}
           fontFamily={"display"}
-          fontSize={{ base: "md", sm: "md", md: "lg", lg: "lg", xl: "lg" }}
+          fontSize={{ base: "md", md: "lg" }}
           fontWeight={"700"}
         >
           {title}
         </Text>
         <Text
-          color={variant === EDUCATION_VARIANT_TYPE.GOLD ? "white" : "gold"}
+          color={descriptionColor}
           fontFamily={"body"}
-          fontSize={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
+          fontSize={{ base: "sm", md: "md" }}
         >
           {description}
         </Text>
       </Flex>
-      {duration ? (
+      {duration && (
         <Text
           color={"white"}
           fontFamily={"body"}
-          fontSize={{ base: "sm", sm: "sm", md: "md", lg: "md", xl: "md" }}
-          textWrap={"nowrap"}
+          fontSize={{ base: "sm", md: "md" }}
+          whiteSpace={"nowrap"}
         >
           {duration}
         </Text>
-      ) : null}
+      )}
     </Flex>
   );
 }
+
+export default memo(EducationComponent);

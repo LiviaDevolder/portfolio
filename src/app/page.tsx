@@ -176,7 +176,7 @@ export default function Home() {
             {t("nav.title")}
           </Text>
           <Flex alignItems={"center"} gap={3}>
-            <ColorModeButton color={"gold"} />
+            <ColorModeButton color={"gold"} aria-label="Alternar modo escuro/claro" />
             <Select.Root
               collection={languages}
               value={[locale]}
@@ -644,9 +644,9 @@ export default function Home() {
         >
           <Text color={"white"}>{t("footer.text")}</Text>
           <Flex gap={"12px"}>
-            <Linkedin />
-            <Email />
-            <Github />
+            <Linkedin aria-label="Perfil do LinkedIn de Lívia Devolder" role="button" tabIndex={0} />
+            <Email aria-label="Enviar email para Lívia Devolder" role="button" tabIndex={0} />
+            <Github aria-label="Perfil do GitHub de Lívia Devolder" role="button" tabIndex={0} />
           </Flex>
         </Flex>
       </Flex>

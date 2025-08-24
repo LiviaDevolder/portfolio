@@ -115,5 +115,13 @@
       "github": "https://github.com/LiviaDevolder",
       "email": "mailto:liviadevolder@gmail.com"
     }
+  },
+  "accessibility": {
+    "colorModeToggle": "Alternar modo oscuro/claro",
+    "languageSelect": "Seleccionar idioma del sitio",
+    "linkedinProfile": "Perfil de LinkedIn de Lívia Devolder",
+    "sendEmail": "Enviar email a Lívia Devolder",
+    "githubProfile": "Perfil de GitHub de Lívia Devolder",
+    "profileImage": "Foto de perfil de Lívia Devolder"
   }
 }

@@ -15,9 +15,40 @@ const nextConfig: NextConfig = {
       use: ["@svgr/webpack"],
     });
 
+    // Bundle analyzer optimization
+    if (process.env.NODE_ENV === "production") {
+      config.optimization.splitChunks = {
+        chunks: "all",
+        cacheGroups: {
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true,
+          },
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendors",
+            priority: -10,
+            chunks: "all",
+          },
+          chakra: {
+            test: /[\\/]node_modules[\\/]@chakra-ui[\\/]/,
+            name: "chakra",
+            priority: 10,
+            chunks: "all",
+          },
+        },
+      };
+    }
+
     return config;
   },
   poweredByHeader: false,
+  images: {
+    formats: ["image/webp", "image/avif"],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1400],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();

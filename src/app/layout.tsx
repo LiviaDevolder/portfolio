@@ -9,35 +9,46 @@ const cormorantGaramond = Cormorant_Garamond({
   variable: "--font-cormorant-garamond",
   subsets: ["latin"],
   weight: "300",
+  display: "swap",
+  preload: true,
 });
 
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: "300",
+  display: "swap",
+  preload: true,
 });
 
-export const metadata: Metadata = {
-  title: "Lívia Devolder | Desenvolvedora Full Stack",
-  description: "Portfolio profissional de Lívia Devolder, desenvolvedora full stack especializada em Node.js, TypeScript, React e WordPress. MBA em Engenharia de Software com IA.",
-  keywords: ["desenvolvedora", "full stack", "Node.js", "TypeScript", "React", "WordPress", "portfolio"],
-  authors: [{ name: "Lívia Devolder" }],
-  openGraph: {
-    title: "Lívia Devolder | Desenvolvedora Full Stack",
-    description: "Portfolio profissional de Lívia Devolder, desenvolvedora full stack com mais de 4 anos de experiência.",
-    type: "website",
-    locale: "pt_BR",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Lívia Devolder | Desenvolvedora Full Stack",
-    description: "Portfolio profissional de Lívia Devolder, desenvolvedora full stack especializada em Node.js, TypeScript, React e WordPress.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  
+  // Dynamic import based on locale
+  const messages = await import(`@/messages/${locale}.json`);
+  
+  return {
+    title: messages.metadata.title,
+    description: messages.metadata.description,
+    keywords: messages.metadata.keywords || ["developer", "full stack", "Node.js", "TypeScript", "React", "WordPress", "portfolio"],
+    authors: [{ name: "Lívia Devolder" }],
+    openGraph: {
+      title: messages.metadata.title,
+      description: messages.metadata.description,
+      type: "website",
+      locale: locale === "pt-BR" ? "pt_BR" : locale === "es-ES" ? "es_ES" : "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: messages.metadata.title,
+      description: messages.metadata.description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
 export default async function RootLayout({
   children,

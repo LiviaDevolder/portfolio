@@ -31,7 +31,12 @@ import Card from "@/components/Card";
 import Education from "@/components/Education";
 import { EDUCATION_VARIANT_TYPE, PROJECTS_TYPE, ProjectsType } from "@/enum";
 import { ReactNode, useEffect, useMemo, useState } from "react";
-import Tab from "@/components/Tab";
+import dynamic from "next/dynamic";
+
+// Dynamic import for Tab component (non-critical)
+const Tab = dynamic(() => import("@/components/Tab"), {
+  loading: () => <div style={{ height: "48px", backgroundColor: "#f0f0f0", borderRadius: "4px" }} />
+});
 
 interface IProjects {
   title: string;
@@ -176,7 +181,10 @@ export default function Home() {
             {t("nav.title")}
           </Text>
           <Flex alignItems={"center"} gap={3}>
-            <ColorModeButton color={"gold"} aria-label="Alternar modo escuro/claro" />
+            <ColorModeButton
+              color={"gold"}
+              aria-label={t("accessibility.colorModeToggle")}
+            />
             <Select.Root
               collection={languages}
               value={[locale]}
@@ -190,6 +198,7 @@ export default function Home() {
                   bgColor={{ base: "gold" }}
                   fontFamily={"body"}
                   color={"blue"}
+                  aria-label={t("accessibility.languageSelect")}
                 >
                   <Select.ValueText placeholder={t("nav.language")} />
                 </Select.Trigger>
@@ -223,11 +232,13 @@ export default function Home() {
           gap={"24px"}
           justifyContent={"space-between"}
         >
-          <NextImage
-            width={350}
-            height={516}
-            src={Profile}
-            alt={"Lívia Tarot Card"}
+          <NextImage 
+            width={350} 
+            height={516} 
+            src={Profile} 
+            alt={t("accessibility.profileImage")}
+            priority
+            sizes="(max-width: 768px) 100vw, 350px"
           />
           <Flex flexDir={"column"} gap={{ base: 4, lg: 8 }}>
             <Flex flexDir={"column"} gap={3}>
@@ -644,9 +655,21 @@ export default function Home() {
         >
           <Text color={"white"}>{t("footer.text")}</Text>
           <Flex gap={"12px"}>
-            <Linkedin aria-label="Perfil do LinkedIn de Lívia Devolder" role="button" tabIndex={0} />
-            <Email aria-label="Enviar email para Lívia Devolder" role="button" tabIndex={0} />
-            <Github aria-label="Perfil do GitHub de Lívia Devolder" role="button" tabIndex={0} />
+            <Linkedin
+              aria-label={t("accessibility.linkedinProfile")}
+              role="button"
+              tabIndex={0}
+            />
+            <Email
+              aria-label={t("accessibility.sendEmail")}
+              role="button"
+              tabIndex={0}
+            />
+            <Github
+              aria-label={t("accessibility.githubProfile")}
+              role="button"
+              tabIndex={0}
+            />
           </Flex>
         </Flex>
       </Flex>

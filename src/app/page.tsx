@@ -14,7 +14,6 @@ import { useTranslations } from "next-intl";
 import NextImage, { StaticImageData } from "next/image";
 import Profile from "../../public/profile.png";
 import Scraper from "../../public/projects/scraper.png";
-import Donna from "../../public/projects/donna.png";
 import Renault from "../../public/projects/renault.png";
 import BoraLa from "../../public/projects/borala.png";
 import Computer from "../../public/computer.svg";
@@ -87,23 +86,6 @@ export default function Home() {
           "Axios",
         ],
       },
-      [PROJECTS_TYPE.DONNA]: {
-        title: t("projects.data.donna.title"),
-        image: Donna,
-        description: t.rich("projects.data.donna.description", {
-          br: () => <br />,
-        }),
-        badges: [
-          "Next.js",
-          "Chakra UI",
-          "WordPress",
-          "WooCommerce",
-          "Mercado Pago",
-          "Brevo",
-          "Vercel",
-          "Hostgator",
-        ],
-      },
       [PROJECTS_TYPE.RENAULT]: {
         title: t("projects.data.renault.title"),
         image: Renault,
@@ -148,6 +130,73 @@ export default function Home() {
       alignItems={"center"}
       flexDir={"column"}
     >
+      {/* Navigation */}
+      <Box
+        position="fixed"
+        top="0"
+        w="100vw"
+        left="0"
+        bg={{ base: "rgba(255, 255, 255, 0.9)", _dark: "rgba(28, 27, 42, 0.8)" }}
+        backdropFilter="blur(8px)"
+        borderBottom="1px solid rgba(229, 195, 166, 0.2)"
+        zIndex="navbar"
+      >
+        <Flex
+          maxW="1400px"
+          mx="auto"
+          px={{ base: 6, lg: 8 }}
+          h="80px"
+          alignItems="center"
+          justifyContent="space-between"
+        >
+            <Text
+              fontFamily="serif"
+              fontSize="2xl"
+              fontWeight="bold"
+              color="accent"
+              letterSpacing="tight"
+            >
+              {t("nav.title")}
+            </Text>
+            <Flex alignItems="center" gap={3}>
+              <ColorModeButton
+                color="accent"
+                aria-label={t("accessibility.colorModeToggle")}
+              />
+              <Select.Root
+                collection={languages}
+                value={[locale]}
+                onValueChange={(e) => setLocale(e.value[0])}
+                width="120px"
+              >
+                <Select.Control>
+                  <Select.Trigger
+                    borderColor="transparent"
+                    borderRadius="4px"
+                    bgColor="accent"
+                    fontFamily="body"
+                    color="primary"
+                    aria-label={t("accessibility.languageSelect")}
+                  >
+                    <Select.ValueText placeholder={t("nav.language")} />
+                  </Select.Trigger>
+                </Select.Control>
+                <Portal>
+                  <Select.Positioner>
+                    <Select.Content bgColor="secondary">
+                      {languages.items.map((language) => (
+                        <Select.Item item={language} key={language.value}>
+                          {language.label}
+                          <Select.ItemIndicator />
+                        </Select.Item>
+                      ))}
+                    </Select.Content>
+                  </Select.Positioner>
+                </Portal>
+              </Select.Root>
+            </Flex>
+          </Flex>
+        </Box>
       <Flex
         w={"100%"}
         minH="100vh"
@@ -155,69 +204,6 @@ export default function Home() {
         flexDir={"column"}
         maxW={"1400px"}
       >
-        {/* Navbar */}
-        <Flex
-          w={"100%"}
-          alignItems={"center"}
-          px={{
-            base: "16px",
-            sm: "24px",
-            md: "48px",
-          }}
-          py={{ base: "24px", lg: "36px" }}
-          justifyContent={"space-between"}
-        >
-          <Text
-            color={"gold"}
-            fontFamily={"display"}
-            fontSize={{
-              base: "xxl",
-              sm: "xxl",
-              md: "xxxl",
-              lg: "xxxl",
-              xl: "xxxl",
-            }}
-          >
-            {t("nav.title")}
-          </Text>
-          <Flex alignItems={"center"} gap={3}>
-            <ColorModeButton
-              color={"gold"}
-              aria-label={t("accessibility.colorModeToggle")}
-            />
-            <Select.Root
-              collection={languages}
-              value={[locale]}
-              onValueChange={(e) => setLocale(e.value[0])}
-              width={"120px"}
-            >
-              <Select.Control>
-                <Select.Trigger
-                  borderColor={"transparent"}
-                  borderRadius={"4px"}
-                  bgColor={{ base: "gold" }}
-                  fontFamily={"body"}
-                  color={"blue"}
-                  aria-label={t("accessibility.languageSelect")}
-                >
-                  <Select.ValueText placeholder={t("nav.language")} />
-                </Select.Trigger>
-              </Select.Control>
-              <Portal>
-                <Select.Positioner>
-                  <Select.Content bgColor={{ base: "purple" }}>
-                    {languages.items.map((language) => (
-                      <Select.Item item={language} key={language.value}>
-                        {language.label}
-                        <Select.ItemIndicator />
-                      </Select.Item>
-                    ))}
-                  </Select.Content>
-                </Select.Positioner>
-              </Portal>
-            </Select.Root>
-          </Flex>
-        </Flex>
         {/* Intro */}
         <Flex
           width={"100%"}
@@ -227,7 +213,8 @@ export default function Home() {
             sm: "24px",
             md: "48px",
           }}
-          py={{ base: "24px", sm: "24px", md: "24px", lg: "36px", xl: "36px" }}
+          pt={{ base: "128px", sm: "128px", md: "128px", lg: "144px", xl: "144px" }}
+          pb={{ base: "80px", sm: "80px", md: "80px", lg: "80px", xl: "80px" }}
           alignItems={"center"}
           gap={"24px"}
           justifyContent={"space-between"}
@@ -266,6 +253,7 @@ export default function Home() {
                   lg: "xl",
                   xl: "xl",
                 }}
+                fontStyle={"italic"}
               >
                 {t("intro.quote")}
               </Text>
@@ -279,7 +267,6 @@ export default function Home() {
                   lg: "xl",
                   xl: "xl",
                 }}
-                fontStyle={"italic"}
               >
                 {t("intro.author")}
               </Text>

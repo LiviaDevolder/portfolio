@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Provider } from "@/components/ui/provider";
-import { Cormorant_Garamond, Poppins } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import { getLocale } from "next-intl/server";
 import { LocaleProvider } from "@/components/LocaleProvider";
 import type { Metadata } from "next";
@@ -8,15 +8,16 @@ import type { Metadata } from "next";
 const cormorantGaramond = Cormorant_Garamond({
   variable: "--font-cormorant-garamond",
   subsets: ["latin"],
-  weight: "300",
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
   preload: true,
 });
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: "300",
+  weight: ["300", "400", "500", "600"],
   display: "swap",
   preload: true,
 });
@@ -60,7 +61,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${cormorantGaramond.variable} ${poppins.variable}`}
+      className={`${cormorantGaramond.variable} ${inter.variable}`}
       suppressHydrationWarning
     >
       <body>

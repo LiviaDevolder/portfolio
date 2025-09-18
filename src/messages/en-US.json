@@ -94,10 +94,6 @@
         "title": "Automations",
         "description": "I build bridges between the scattered information on the web and the strategic value for your business. With expertise in automation and web scraping, I develop custom bots that navigate, extract, and structure data with high precision and efficiency.<br></br><br></br>Whether it's a CAPTCHA-protected site, a single-page application with infinite scrolling, or the need to collect millions of data points daily, I have the experience and the right tools for the job."
       },
-      "donna": {
-        "title": "Donna Plus Size Wholesale",
-        "description": "I developed a high-performance B2B e-commerce platform, aiming to modernize the wholesale shopping experience and simplify product management for the client.<br></br><br></br>Using a headless architecture, I built an agile, SEO-optimized front-end with Next.js and Chakra UI. The back-end leverages the robustness of WordPress with WooCommerce, allowing the team to manage the catalog and orders through a familiar dashboard, while customers enjoy an ultra-fast website.<br></br><br></br>The project includes full integration with Mercado Pago for secure payments and transactional email automation (order confirmation, shipping, etc.) via Brevo."
-      },
       "renault": {
         "title": "Renault Store",
         "description": "I actively participated in the development team for the \"Renault Store\", a large-scale e-commerce platform designed for selling new vehicles in several Latin American countries.<br></br><br></br>As part of the team, I collaborated on building a robust and scalable full-stack solution. My responsibilities included developing reusable front-end components with Next.js and Chakra UI, and implementing endpoints and business logic in the back-end API with Nest.js.<br></br><br></br>I worked directly with TypeScript across the entire stack to ensure code quality and maintainability, as well as assisting with the modeling and integration of the PostgreSQL database. The project required a special focus on internationalization (i18n) to adapt the shopping experience to each specific market."

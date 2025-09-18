@@ -104,6 +104,11 @@
       }
     }
   },
+  "contact": {
+    "title": "Entre em Contato!",
+    "description": "Escaneie o QR Code para acessar meu LinkedIn",
+    "directAccess": "Ou acesse diretamente:"
+  },
   "footer": {
     "text": "© 2025 Lívia Devolder. Todos os direitos reservados.",
     "links": {

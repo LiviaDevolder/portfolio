@@ -21,24 +21,42 @@ function EducationComponent({
     return (
       <Flex
         p={"24px"}
-        bgColor="accent"
+        bg={{
+          base: "rgba(229, 195, 166, 0.08)",
+          _dark: "rgba(229, 195, 166, 0.05)",
+        }}
+        border="1px solid"
+        borderColor={{
+          base: "rgba(229, 195, 166, 0.3)",
+          _dark: "rgba(229, 195, 166, 0.2)",
+        }}
         flexDir={"column"}
-        fontWeight={"bold"}
         borderRadius={"md"}
         w={"100%"}
+        backdropFilter="blur(8px)"
       >
         <Text
-          color={"purple"}
+          color="gold"
           fontFamily={"serif"}
           fontSize={"lg"}
+          fontWeight={"semibold"}
         >
           {title}
         </Text>
-        <Text color={"white"}>
+        <Text 
+          color={{ base: "blue", _dark: "white" }}
+          fontFamily={"body"}
+          fontSize={"md"}
+        >
           {description}
         </Text>
         {duration && (
-          <Text color={"white"} fontSize={"sm"}>
+          <Text 
+            color={{ base: "blue", _dark: "whiteAlpha.700" }}
+            fontFamily={"body"}
+            fontSize={"sm"}
+            mt={1}
+          >
             {duration}
           </Text>
         )}
@@ -49,22 +67,34 @@ function EducationComponent({
   return (
     <Flex
       p={3}
-      bgColor="purple"
+      bg={{
+        base: "rgba(123, 97, 255, 0.08)",
+        _dark: "rgba(123, 97, 255, 0.08)",
+      }}
+      border="1px solid"
+      borderColor={{
+        base: "rgba(123, 97, 255, 0.25)",
+        _dark: "rgba(123, 97, 255, 0.2)",
+      }}
       flexDir={"column"}
-      fontWeight={"bold"}
       borderRadius={"md"}
       w={"100%"}
       textAlign="center"
+      backdropFilter="blur(8px)"
     >
       <Text
         fontFamily="serif"
         fontWeight="semibold"
-        color={"white"}
+        color="purple"
         fontSize="md"
       >
         {title}
       </Text>
-      <Text color="text.accent" fontSize="sm">
+      <Text 
+        color={{ base: "blue", _dark: "whiteAlpha.800" }}
+        fontFamily={"body"}
+        fontSize="sm"
+      >
         {description}
       </Text>
     </Flex>

@@ -76,9 +76,8 @@ export default function Navigation() {
           fontWeight="700"
           color="accent"
           letterSpacing="tight"
-          
         >
-          {t("nav.title")}
+          Lívia <Box as="span" color="purple">&lt;DEV&gt;</Box>older
         </Text>
         
         <Flex alignItems="center" gap={3}>

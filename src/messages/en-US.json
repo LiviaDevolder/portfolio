@@ -9,12 +9,11 @@
   },
   "intro": {
     "title": "Full Stack Developer",
-    "quote": "\"No one is so big that they can't learn, nor so small that they can't teach.\"",
-    "author": "- Aesop"
+    "description": "Transforming ideas into scalable, intelligent, and high-quality digital products"
   },
   "about": {
     "title": "About Me",
-    "description": "I'm Lívia, a full stack developer with over 4 years of experience working with technologies like <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>React</strong>, and <strong>WordPress</strong>.<br></br><br></br>I value well-structured technical development with attention to user experience and clear communication. I believe great projects are born from listening, collaboration, and solutions designed with empathy.",
+    "description": "Full stack developer with over 4 years of experience building scalable solutions with <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>React</strong>, and <strong>Cloud infrastructure (AWS/GCP)</strong>.<br></br><br></br>Currently specializing in <strong>Software Engineering with AI</strong>, I aim to integrate artificial intelligence and automation to create products that solve real problems efficiently.<br></br><br></br>I value well-structured technical development with attention to user experience and clear communication. I believe great projects are born from listening, collaboration, and solutions designed with empathy.",
     "education": {
       "graduation": {
         "course": "Technology in Computer Systems",
@@ -63,10 +62,12 @@
       "brq-2": {
         "title": "BRQ Digital Solutions",
         "role": "Mid-level Developer",
-        "duration": "Jul 2025 - Currently",
-        "description": "Responsible for developing and maintaining web applications, specifically in Renault Group's after-sales systems, as a full-stack developer."
+        "duration": "Jul 2025 - Present",
+        "description": "Responsible for developing and maintaining web applications, specifically in Renault Group's after-sales, as a full-stack developer."
       }
-    }
+    },
+    "showMore": "Show more",
+    "showLess": "Show less"
   },
   "services": {
     "title": "Services",

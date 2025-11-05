@@ -1,13 +1,9 @@
 "use client";
 
-import { useLocaleContext } from "@/components/LocaleProvider";
-import { ColorModeButton } from "@/components/ui/color-mode";
 import {
   Box,
-  createListCollection,
+  Button,
   Flex,
-  Portal,
-  Select,
   Text,
 } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
@@ -28,6 +24,7 @@ import Github from "../../public/github.svg";
 import Badge from "@/components/Badge";
 import Card from "@/components/Card";
 import Education from "@/components/Education";
+import Navigation from "@/components/Navigation";
 import { EDUCATION_VARIANT_TYPE, PROJECTS_TYPE, ProjectsType } from "@/enum";
 import { ReactNode, useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
@@ -54,15 +51,7 @@ interface IProjects {
 
 export default function Home() {
   const t = useTranslations();
-
-  const languages = createListCollection({
-    items: [
-      { label: "Português", value: "pt-BR" },
-      { label: "English", value: "en-US" },
-      { label: "Español", value: "es-ES" },
-    ],
-  });
-  const { locale, setLocale } = useLocaleContext();
+  const [showAllExperiences, setShowAllExperiences] = useState(false);
 
   useEffect(() => {
     document.title = t("metadata.title");
@@ -76,6 +65,76 @@ export default function Home() {
   const [selectedProject, setSelectedProject] = useState<ProjectsType>(
     PROJECTS_TYPE.SCRAPER
   );
+
+  const experiences = useMemo(
+    () => [
+      {
+        key: "brq-2",
+        title: t("about.experience.brq-2.title"),
+        description: t("about.experience.brq-2.description"),
+        role: t("about.experience.brq-2.role"),
+        duration: t("about.experience.brq-2.duration"),
+        badges: [
+          "TypeScript",
+          "Prisma",
+          "PostgreSQL",
+          "Nest.js",
+          "Next.js",
+          "Chakra UI",
+        ],
+      },
+      {
+        key: "deal",
+        title: t("about.experience.deal.title"),
+        description: t("about.experience.deal.description"),
+        role: t("about.experience.deal.role"),
+        duration: t("about.experience.deal.duration"),
+        badges: [
+          "TypeScript",
+          "Prisma",
+          "PostgreSQL",
+          "Tailwind",
+          "Azure",
+          "Nest.js",
+        ],
+      },
+      {
+        key: "clearsale",
+        title: t("about.experience.clearsale.title"),
+        description: t("about.experience.clearsale.description"),
+        role: t("about.experience.clearsale.role"),
+        duration: t("about.experience.clearsale.duration"),
+        badges: [
+          "TypeScript",
+          "MongoDB",
+          "Terraform",
+          "AWS",
+          "APIfy",
+          "Node.js",
+        ],
+      },
+      {
+        key: "brq",
+        title: t("about.experience.brq.title"),
+        description: t("about.experience.brq.description"),
+        role: t("about.experience.brq.role"),
+        duration: t("about.experience.brq.duration"),
+        badges: [
+          "TypeScript",
+          "CSS",
+          "PostgreSQL",
+          "Nest.js",
+          "Next.js",
+          "Chakra UI",
+        ],
+      },
+    ],
+    [t]
+  );
+
+  const displayedExperiences = showAllExperiences
+    ? experiences
+    : experiences.slice(0, 2);
 
   const projectsRecord: Record<ProjectsType, IProjects> = useMemo(
     () => ({
@@ -139,75 +198,7 @@ export default function Home() {
       flexDir={"column"}
     >
       {/* Navigation */}
-      <Box
-        position="fixed"
-        top="0"
-        w="100vw"
-        left="0"
-        bg={{
-          base: "rgba(255, 255, 255, 0.9)",
-          _dark: "rgba(28, 27, 42, 0.8)",
-        }}
-        backdropFilter="blur(8px)"
-        borderBottom="1px solid rgba(229, 195, 166, 0.2)"
-        zIndex="navbar"
-      >
-        <Flex
-          maxW="1400px"
-          mx="auto"
-          px={{ base: 6, lg: 8 }}
-          h="80px"
-          alignItems="center"
-          justifyContent="space-between"
-        >
-          <Text
-            fontFamily="serif"
-            fontSize="2xl"
-            fontWeight="bold"
-            color="accent"
-            letterSpacing="tight"
-          >
-            {t("nav.title")}
-          </Text>
-          <Flex alignItems="center" gap={3}>
-            <ColorModeButton
-              color="accent"
-              aria-label={t("accessibility.colorModeToggle")}
-            />
-            <Select.Root
-              collection={languages}
-              value={[locale]}
-              onValueChange={(e) => setLocale(e.value[0])}
-              width="120px"
-            >
-              <Select.Control>
-                <Select.Trigger
-                  borderColor="transparent"
-                  borderRadius="4px"
-                  bgColor="accent"
-                  fontFamily="body"
-                  color="primary"
-                  aria-label={t("accessibility.languageSelect")}
-                >
-                  <Select.ValueText placeholder={t("nav.language")} />
-                </Select.Trigger>
-              </Select.Control>
-              <Portal>
-                <Select.Positioner>
-                  <Select.Content bgColor="secondary">
-                    {languages.items.map((language) => (
-                      <Select.Item item={language} key={language.value}>
-                        {language.label}
-                        <Select.ItemIndicator />
-                      </Select.Item>
-                    ))}
-                  </Select.Content>
-                </Select.Positioner>
-              </Portal>
-            </Select.Root>
-          </Flex>
-        </Flex>
-      </Box>
+      <Navigation />
       <Flex
         w={"100%"}
         minH="100vh"
@@ -250,44 +241,54 @@ export default function Home() {
                 color={"gold"}
                 fontFamily={"display"}
                 fontWeight={"bold"}
-                fontSize={{ base: "xxl", md: "xxxl" }}
+                fontSize={{ base: "xl", md: "xxl" }}
               >
                 {t("intro.title")}
               </Text>
-            </Flex>
-            <Flex flexDir={"column"} alignItems={"end"}>
               <Text
                 color={{ base: "blue", _dark: "white" }}
                 fontFamily={"body"}
                 fontSize={{
                   base: "md",
                   sm: "md",
-                  md: "xl",
-                  lg: "xl",
-                  xl: "xl",
-                }}
-                fontStyle={"italic"}
-              >
-                {t("intro.quote")}
-              </Text>
-              <Text
-                color={{ base: "blue", _dark: "white" }}
-                fontFamily={"body"}
-                fontSize={{
-                  base: "md",
-                  sm: "md",
-                  md: "xl",
-                  lg: "xl",
-                  xl: "xl",
+                  md: "lg",
+                  lg: "lg",
+                  xl: "lg",
                 }}
               >
-                {t("intro.author")}
+                {t("intro.description")}
               </Text>
             </Flex>
             <Flex gap={"12px"}>
-              <Badge>WordPress</Badge>
+              <Badge>React.js</Badge>
               <Badge>Node.js</Badge>
-              <Badge>IA</Badge>
+              <Badge>Cloud</Badge>
+              <Badge>AI</Badge>
+            </Flex>
+            <Flex mt={4}>
+              <a
+                href="https://www.credly.com/badges/0694c04b-48cc-4ccc-9e4b-26a8326e681f"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Linux Essentials Certification Badge"
+              >
+                <NextImage
+                  src="https://images.credly.com/size/340x340/images/009defc4-25a0-4d6f-8b2d-7fac9c7362f1/blob"
+                  alt="Linux Essentials Certification"
+                  width={60}
+                  height={60}
+                  style={{
+                    cursor: "pointer",
+                    transition: "transform 0.2s ease",
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
+                />
+              </a>
             </Flex>
           </Flex>
         </Flex>
@@ -305,6 +306,7 @@ export default function Home() {
         >
           <Text
             color={"gold"}
+            fontWeight={"bold"}
             fontFamily={"display"}
             fontSize={{ base: "xl", sm: "xl", md: "xxl", lg: "xxl", xl: "xxl" }}
           >
@@ -337,13 +339,7 @@ export default function Home() {
               <Text
                 color={{ base: "blue", _dark: "white" }}
                 fontFamily={"body"}
-                fontSize={{
-                  base: "md",
-                  sm: "md",
-                  md: "lg",
-                  lg: "lg",
-                  xl: "lg",
-                }}
+                fontSize={"1.125rem"}
               >
                 {t.rich("about.description", {
                   strong: (chunks) => <strong>{chunks}</strong>,
@@ -353,6 +349,7 @@ export default function Home() {
               <Flex
                 flexDir={"column"}
                 w={"100%"}
+                gap={"12px"}
                 // maxW={"max-content"}
               >
                 <Education
@@ -370,7 +367,7 @@ export default function Home() {
                 <Flex
                   gap={"12px"}
                   justifyContent={"space-between"}
-                  flexDirection={{ base: "column", sm: "row" }}
+                  flexDirection={{ base: "row", sm: "row" }}
                 >
                   <Education
                     title={t("about.languages.portuguese.title")}
@@ -397,62 +394,31 @@ export default function Home() {
               gap={"24px"}
               zIndex={0}
             >
-              <Card
-                title={t("about.experience.brq-2.title")}
-                description={t("about.experience.brq-2.description")}
-                role={t("about.experience.brq-2.role")}
-                duration={t("about.experience.brq-2.duration")}
-                badges={[
-                  "TypeScript",
-                  "Prisma",
-                  "PostgreSQL",
-                  "Nest.js",
-                  "Next.js",
-                  "Chakra UI",
-                ]}
-              />
-              <Card
-                title={t("about.experience.deal.title")}
-                description={t("about.experience.deal.description")}
-                role={t("about.experience.deal.role")}
-                duration={t("about.experience.deal.duration")}
-                badges={[
-                  "TypeScript",
-                  "Prisma",
-                  "PostgreSQL",
-                  "Tailwind",
-                  "Azure",
-                  "Nest.js",
-                ]}
-              />
-              <Card
-                title={t("about.experience.clearsale.title")}
-                description={t("about.experience.clearsale.description")}
-                role={t("about.experience.clearsale.role")}
-                duration={t("about.experience.clearsale.duration")}
-                badges={[
-                  "TypeScript",
-                  "MongoDB",
-                  "Terraform",
-                  "AWS",
-                  "APIfy",
-                  "Node.js",
-                ]}
-              />
-              <Card
-                title={t("about.experience.brq.title")}
-                description={t("about.experience.brq.description")}
-                role={t("about.experience.brq.role")}
-                duration={t("about.experience.brq.duration")}
-                badges={[
-                  "TypeScript",
-                  "CSS",
-                  "PostgreSQL",
-                  "Nest.js",
-                  "Next.js",
-                  "Chakra UI",
-                ]}
-              />
+              {displayedExperiences.map((experience) => (
+                <Card
+                  key={experience.key}
+                  title={experience.title}
+                  description={experience.description}
+                  role={experience.role}
+                  duration={experience.duration}
+                  badges={experience.badges}
+                />
+              ))}
+              <Button
+                onClick={() => setShowAllExperiences(!showAllExperiences)}
+                variant="outline"
+                borderColor="gold"
+                color="gold"
+                w="100%"
+                _hover={{
+                  bgColor: "gold",
+                  color: "white",
+                }}
+                alignSelf="center"
+                mt={2}
+              >
+                {showAllExperiences ? t("about.showLess") : t("about.showMore")}
+              </Button>
             </Flex>
           </Flex>
         </Flex>
@@ -470,6 +436,7 @@ export default function Home() {
         >
           <Text
             color={"gold"}
+            fontWeight={"bold"}
             fontFamily={"display"}
             fontSize={{ base: "xl", sm: "xl", md: "xxl", lg: "xxl", xl: "xxl" }}
           >
@@ -564,6 +531,7 @@ export default function Home() {
         >
           <Text
             color={"gold"}
+            fontWeight={"bold"}
             fontFamily={"display"}
             fontSize={{ base: "xl", sm: "xl", md: "xxl", lg: "xxl", xl: "xxl" }}
           >

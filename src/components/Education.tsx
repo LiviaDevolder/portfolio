@@ -20,23 +20,21 @@ function EducationComponent({
   if (isGold) {
     return (
       <Flex
-        p={6}
+        p={"24px"}
         bgColor="accent"
         flexDir={"column"}
+        fontWeight={"bold"}
         borderRadius={"md"}
         w={"100%"}
-        mb={6}
       >
         <Text
           color={"purple"}
           fontFamily={"serif"}
-          fontSize={"xl"}
-          fontWeight={"bold"}
-          mb={2}
+          fontSize={"lg"}
         >
           {title}
         </Text>
-        <Text color={"white"} mb={2}>
+        <Text color={"white"}>
           {description}
         </Text>
         {duration && (
@@ -50,9 +48,10 @@ function EducationComponent({
 
   return (
     <Flex
-      p={4}
+      p={3}
       bgColor="purple"
       flexDir={"column"}
+      fontWeight={"bold"}
       borderRadius={"md"}
       w={"100%"}
       textAlign="center"
@@ -60,9 +59,8 @@ function EducationComponent({
       <Text
         fontFamily="serif"
         fontWeight="semibold"
-        color="text.light"
-        mb={1}
-        fontSize="lg"
+        color={"white"}
+        fontSize="md"
       >
         {title}
       </Text>

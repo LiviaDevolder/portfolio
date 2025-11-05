@@ -14,7 +14,10 @@ function CardComponent({ title, description, role, duration, badges }: ICard) {
   return (
     <Flex
       p={6}
-      bg="whiteAlpha.50"
+      bg={{
+        base: "rgba(233, 229, 238)",
+        _dark: "whiteAlpha.50",
+      }}
       fontSize={{ base: "sm", md: "md" }}
       flexDir={"column"}
       borderRadius={"md"}

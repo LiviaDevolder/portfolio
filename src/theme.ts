@@ -15,9 +15,9 @@ const config = defineConfig({
         gold: { value: "#E5C3A6" },
       },
       fonts: {
-        display: { value: "var(--font-cormorant-garamond), 'Cormorant Garamond', serif" },
+        display: { value: "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif" },
         body: { value: "var(--font-inter), 'Inter', sans-serif" },
-        serif: { value: "var(--font-cormorant-garamond), 'Cormorant Garamond', serif" },
+        serif: { value: "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif" },
         sans: { value: "var(--font-inter), 'Inter', sans-serif" },
       },
       fontSizes: {

@@ -9,12 +9,11 @@
   },
   "intro": {
     "title": "Desenvolvedora FullStack",
-    "quote": "\"Ninguém é tão grande que não possa aprender, nem tão pequeno que não possa ensinar\"",
-    "author": "- Esopo"
+    "description": "Transformando ideias em produtos digitais escaláveis, inteligentes e de alta qualidade"
   },
   "about": {
     "title": "Sobre Mim",
-    "description": "Sou Lívia, desenvolvedora full stack com mais de 4 anos de experiência com tecnologias como <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>React</strong> e <strong>WordPress</strong>.<br></br><br></br>Valorizo um desenvolvimento técnico bem estruturado, com atenção à experiência do usuário e uma comunicação clara. Acredito que bons projetos nascem da escuta, da colaboração e de soluções pensadas com empatia.",
+    "description": "Desenvolvedora full stack com mais de 4 anos de experiência construindo soluções escaláveis com <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>React</strong> e infraestrutura em <strong>Cloud (AWS/GCP)</strong>.<br></br><br></br>Atualmente me especializando em <strong>Engenharia de Software com IA</strong>, busco integrar inteligência artificial e automação para criar produtos que resolvem problemas reais de forma eficiente.<br></br><br></br>Valorizo um desenvolvimento técnico bem estruturado, com atenção à experiência do usuário e comunicação clara. Acredito que bons projetos nascem da escuta, da colaboração e de soluções pensadas com empatia.",
     "education": {
       "graduation": {
         "course": "Tecnologia em Sistemas da Computação",
@@ -66,7 +65,9 @@
         "duration": "Jul 2025 - Atualmente",
         "description": "Responsável por desenvolver e manter aplicações web, especificamente no pós venda do Grupo Renault, como full-stack."
       }
-    }
+    },
+    "showMore": "Ver mais",
+    "showLess": "Ver menos"
   },
   "services": {
     "title": "Serviços",

@@ -12,7 +12,6 @@ import {
 } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import GoldStar from "../../public/gold-star.svg";
 
 const ChevronIcon = ({ isOpen, color }: { isOpen: boolean; color: string }) => (
   <svg

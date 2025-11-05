@@ -9,11 +9,13 @@ import { memo } from "react";
 function BadgeComponent({ children }: IBadge) {
   return (
     <Text
-      px={4}
+      px={3}
       py={1}
       bgColor={"purple"}
       color={"white"}
-      fontSize={{ base: "sm", md: "md" }}
+      fontSize={"xs"}
+      borderRadius={"sm"}
+      boxShadow={"techBadge"}
     >
       {children}
     </Text>

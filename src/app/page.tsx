@@ -34,7 +34,15 @@ import dynamic from "next/dynamic";
 
 // Dynamic import for Tab component (non-critical)
 const Tab = dynamic(() => import("@/components/Tab"), {
-  loading: () => <div style={{ height: "48px", backgroundColor: "#f0f0f0", borderRadius: "4px" }} />
+  loading: () => (
+    <div
+      style={{
+        height: "48px",
+        backgroundColor: "#f0f0f0",
+        borderRadius: "4px",
+      }}
+    />
+  ),
 });
 
 interface IProjects {
@@ -136,7 +144,10 @@ export default function Home() {
         top="0"
         w="100vw"
         left="0"
-        bg={{ base: "rgba(255, 255, 255, 0.9)", _dark: "rgba(28, 27, 42, 0.8)" }}
+        bg={{
+          base: "rgba(255, 255, 255, 0.9)",
+          _dark: "rgba(28, 27, 42, 0.8)",
+        }}
         backdropFilter="blur(8px)"
         borderBottom="1px solid rgba(229, 195, 166, 0.2)"
         zIndex="navbar"
@@ -149,54 +160,54 @@ export default function Home() {
           alignItems="center"
           justifyContent="space-between"
         >
-            <Text
-              fontFamily="serif"
-              fontSize="2xl"
-              fontWeight="bold"
+          <Text
+            fontFamily="serif"
+            fontSize="2xl"
+            fontWeight="bold"
+            color="accent"
+            letterSpacing="tight"
+          >
+            {t("nav.title")}
+          </Text>
+          <Flex alignItems="center" gap={3}>
+            <ColorModeButton
               color="accent"
-              letterSpacing="tight"
+              aria-label={t("accessibility.colorModeToggle")}
+            />
+            <Select.Root
+              collection={languages}
+              value={[locale]}
+              onValueChange={(e) => setLocale(e.value[0])}
+              width="120px"
             >
-              {t("nav.title")}
-            </Text>
-            <Flex alignItems="center" gap={3}>
-              <ColorModeButton
-                color="accent"
-                aria-label={t("accessibility.colorModeToggle")}
-              />
-              <Select.Root
-                collection={languages}
-                value={[locale]}
-                onValueChange={(e) => setLocale(e.value[0])}
-                width="120px"
-              >
-                <Select.Control>
-                  <Select.Trigger
-                    borderColor="transparent"
-                    borderRadius="4px"
-                    bgColor="accent"
-                    fontFamily="body"
-                    color="primary"
-                    aria-label={t("accessibility.languageSelect")}
-                  >
-                    <Select.ValueText placeholder={t("nav.language")} />
-                  </Select.Trigger>
-                </Select.Control>
-                <Portal>
-                  <Select.Positioner>
-                    <Select.Content bgColor="secondary">
-                      {languages.items.map((language) => (
-                        <Select.Item item={language} key={language.value}>
-                          {language.label}
-                          <Select.ItemIndicator />
-                        </Select.Item>
-                      ))}
-                    </Select.Content>
-                  </Select.Positioner>
-                </Portal>
-              </Select.Root>
-            </Flex>
+              <Select.Control>
+                <Select.Trigger
+                  borderColor="transparent"
+                  borderRadius="4px"
+                  bgColor="accent"
+                  fontFamily="body"
+                  color="primary"
+                  aria-label={t("accessibility.languageSelect")}
+                >
+                  <Select.ValueText placeholder={t("nav.language")} />
+                </Select.Trigger>
+              </Select.Control>
+              <Portal>
+                <Select.Positioner>
+                  <Select.Content bgColor="secondary">
+                    {languages.items.map((language) => (
+                      <Select.Item item={language} key={language.value}>
+                        {language.label}
+                        <Select.ItemIndicator />
+                      </Select.Item>
+                    ))}
+                  </Select.Content>
+                </Select.Positioner>
+              </Portal>
+            </Select.Root>
           </Flex>
-        </Box>
+        </Flex>
+      </Box>
       <Flex
         w={"100%"}
         minH="100vh"
@@ -213,34 +224,36 @@ export default function Home() {
             sm: "24px",
             md: "48px",
           }}
-          pt={{ base: "128px", sm: "128px", md: "128px", lg: "144px", xl: "144px" }}
+          pt={{
+            base: "128px",
+            sm: "128px",
+            md: "128px",
+            lg: "144px",
+            xl: "144px",
+          }}
           pb={{ base: "80px", sm: "80px", md: "80px", lg: "80px", xl: "80px" }}
           alignItems={"center"}
           gap={"24px"}
-          justifyContent={"space-between"}
+          justifyContent={"space-around"}
         >
-          <NextImage 
-            width={350} 
-            height={516} 
-            src={Profile} 
+          <NextImage
+            width={350}
+            height={516}
+            src={Profile}
             alt={t("accessibility.profileImage")}
             priority
             sizes="(max-width: 768px) 100vw, 350px"
           />
-          <Flex flexDir={"column"} gap={{ base: 4, lg: 8 }}>
+          <Flex flexDir={"column"} maxW={"576px"} gap={{ base: 4, lg: 4 }}>
             <Flex flexDir={"column"} gap={3}>
               <Text
                 color={"gold"}
                 fontFamily={"display"}
+                fontWeight={"bold"}
                 fontSize={{ base: "xxl", md: "xxxl" }}
               >
                 {t("intro.title")}
               </Text>
-              <Flex gap={"12px"}>
-                <Badge>WordPress</Badge>
-                <Badge>Node.js</Badge>
-                <Badge>IA</Badge>
-              </Flex>
             </Flex>
             <Flex flexDir={"column"} alignItems={"end"}>
               <Text
@@ -270,6 +283,11 @@ export default function Home() {
               >
                 {t("intro.author")}
               </Text>
+            </Flex>
+            <Flex gap={"12px"}>
+              <Badge>WordPress</Badge>
+              <Badge>Node.js</Badge>
+              <Badge>IA</Badge>
             </Flex>
           </Flex>
         </Flex>
@@ -334,9 +352,8 @@ export default function Home() {
               </Text>
               <Flex
                 flexDir={"column"}
-                gap={"12px"}
                 w={"100%"}
-                maxW={"max-content"}
+                // maxW={"max-content"}
               >
                 <Education
                   title={t("about.education.mba.course")}

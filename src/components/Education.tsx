@@ -16,49 +16,59 @@ function EducationComponent({
   variant,
 }: IEducation) {
   const isGold = variant === EDUCATION_VARIANT_TYPE.GOLD;
-  const bgColor = isGold ? "gold" : "purple";
-  const titleColor = isGold ? "purple" : "white";
-  const descriptionColor = isGold ? "white" : "gold";
+
+  if (isGold) {
+    return (
+      <Flex
+        p={6}
+        bgColor="accent"
+        flexDir={"column"}
+        borderRadius={"md"}
+        w={"100%"}
+        mb={6}
+      >
+        <Text
+          color={"purple"}
+          fontFamily={"serif"}
+          fontSize={"xl"}
+          fontWeight={"bold"}
+          mb={2}
+        >
+          {title}
+        </Text>
+        <Text color={"white"} mb={2}>
+          {description}
+        </Text>
+        {duration && (
+          <Text color={"white"} fontSize={"sm"}>
+            {duration}
+          </Text>
+        )}
+      </Flex>
+    );
+  }
 
   return (
     <Flex
       p={4}
-      bgColor={bgColor}
-      fontSize={{ base: "sm", md: "md" }}
-      flexDir={"row"}
-      borderRadius={"sm"}
-      gap={3}
-      justifyContent={"space-between"}
-      alignItems={"center"}
+      bgColor="purple"
+      flexDir={"column"}
+      borderRadius={"md"}
       w={"100%"}
+      textAlign="center"
     >
-      <Flex flexDir={"column"} w={"100%"}>
-        <Text
-          color={titleColor}
-          fontFamily={"display"}
-          fontSize={{ base: "md", md: "lg" }}
-          fontWeight={"700"}
-        >
-          {title}
-        </Text>
-        <Text
-          color={descriptionColor}
-          fontFamily={"body"}
-          fontSize={{ base: "sm", md: "md" }}
-        >
-          {description}
-        </Text>
-      </Flex>
-      {duration && (
-        <Text
-          color={"white"}
-          fontFamily={"body"}
-          fontSize={{ base: "sm", md: "md" }}
-          whiteSpace={"nowrap"}
-        >
-          {duration}
-        </Text>
-      )}
+      <Text
+        fontFamily="serif"
+        fontWeight="semibold"
+        color="text.light"
+        mb={1}
+        fontSize="lg"
+      >
+        {title}
+      </Text>
+      <Text color="text.accent" fontSize="sm">
+        {description}
+      </Text>
     </Flex>
   );
 }

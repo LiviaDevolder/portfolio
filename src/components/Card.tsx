@@ -13,27 +13,25 @@ interface ICard {
 function CardComponent({ title, description, role, duration, badges }: ICard) {
   return (
     <Flex
-      p={4}
-      bgColor={"gray"}
-      color={{ base: "white", _dark: "blue" }}
+      p={6}
+      bg="whiteAlpha.50"
       fontSize={{ base: "sm", md: "md" }}
       flexDir={"column"}
-      borderRadius={"sm"}
-      maxW={"620px"}
-      gap={3}
+      borderRadius={"md"}
+      gap={4}
     >
-      <Flex justifyContent={"space-between"} alignItems={"center"}>
+      <Flex justifyContent={"space-between"} alignItems={"start"}>
         <Flex flexDir={"column"}>
           <Text
-            color={{ base: "white", _dark: "blue" }}
-            fontFamily={"display"}
+            color="text.light"
+            fontFamily={"serif"}
             fontSize={{ base: "lg", md: "xl" }}
-            fontWeight={"700"}
+            fontWeight={"semibold"}
           >
             {title}
           </Text>
           <Text
-            color={"purple"}
+            color={"text.secondary"}
             fontFamily={"body"}
             fontSize={{ base: "sm", md: "md" }}
           >
@@ -41,26 +39,25 @@ function CardComponent({ title, description, role, duration, badges }: ICard) {
           </Text>
         </Flex>
         <Text
-          color={{ base: "white", _dark: "blue" }}
+          color="text.light"
           fontFamily={"body"}
           fontSize={{ base: "sm", md: "md" }}
         >
           {duration}
         </Text>
       </Flex>
-      <Flex gap={4} flexDirection={{ base: "column", lg: "row" }}>
-        <Text
-          color={{ base: "white", _dark: "blue" }}
-          fontFamily={"body"}
-          fontSize={{ base: "sm", md: "md" }}
-        >
-          {description}
-        </Text>
-        <Flex flexWrap={"wrap"} gap={2}>
-          {badges.map((badge) => (
-            <Badge key={badge}>{badge}</Badge>
-          ))}
-        </Flex>
+      <Text
+        color="text.light"
+        fontFamily={"body"}
+        fontSize={{ base: "sm", md: "md" }}
+        mb={4}
+      >
+        {description}
+      </Text>
+      <Flex flexWrap={"wrap"} gap={2}>
+        {badges.map((badge) => (
+          <Badge key={badge}>{badge}</Badge>
+        ))}
       </Flex>
     </Flex>
   );

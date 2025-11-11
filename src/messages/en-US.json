@@ -43,27 +43,39 @@
     "experience": {
       "brq": {
         "title": "BRQ Digital Solutions",
-        "role": "Trainee - Junior Developer",
-        "duration": "Jun 2021 - Aug 2023",
-        "description": "Responsible for developing and maintaining web applications, specifically in Renault Group's e-commerce projects, as a full stack developer."
+        "role": "Trainee Backend Developer",
+        "duration": "Jul 2021 - Aug 2022",
+        "description": "First professional experience developing automotive e-commerce platforms for Renault Group. Quickly evolved from backend TypeScript/NestJS to full-stack with React/Next.js, gaining autonomy to execute tasks independently. Worked on projects for Argentine and Brazilian markets, communicating in Spanish with local stakeholders. Promoted to Junior after 12 months."
+      },
+      "brq-junior": {
+        "title": "BRQ Digital Solutions",
+        "role": "Junior FullStack Developer",
+        "duration": "Aug 2022 - Aug 2023",
+        "description": "Full-stack development for Renault e-commerce platforms in Brazilian and Argentine markets. Implemented end-to-end features including shopping cart, payment gateway integrations, and online reservation systems. Contributed part-time to My Renault app, collaborating with teams from France and Romania in an international environment."
       },
       "clearsale": {
         "title": "ClearSale",
-        "role": "Junior Developer",
+        "role": "Junior Backend Developer",
         "duration": "Aug 2023 - Nov 2024",
-        "description": "Responsible for developing and maintaining web applications and scrapping services for various platforms, working on the back-end."
+        "description": "Development of brand protection and cybersecurity solutions using web scraping and AI for large enterprises. Led implementation of visual recognition system with AWS Rekognition, training custom models that automatically prioritized critical threats, significantly increasing security team efficiency. Microservices architecture with distributed processing of high-volume data."
+      },
+      "borala-freelance": {
+        "title": "Bora Lá",
+        "role": "Mid-Level FullStack Developer - Freelancer",
+        "duration": "Jul 2024 - Jun 2025",
+        "description": "Complete reconstruction of multi-platform ecosystem for gastronomic experiences marketplace, developing from scratch three integrated applications: mobile PWA for users, platform for establishments, and admin panel. Serverless architecture with Firebase and complete project management from requirements gathering to final delivery."
       },
       "deal": {
         "title": "Deal Technologies",
-        "role": "Mid-level Developer",
+        "role": "Mid-Level FullStack Developer",
         "duration": "Nov 2024 - Jul 2025",
-        "description": "Responsible for developing and maintaining web applications for various clients, including B3 and Porto Seguro."
+        "description": "Full-stack development in consulting projects for B3 and Porto Seguro. At B3, worked on building a carbon credits marketplace connecting capture initiatives with emitting companies. At Porto Seguro, worked on automated automotive insurance pricing system, evolving legacy systems with modern technologies."
       },
       "brq-2": {
         "title": "BRQ Digital Solutions",
-        "role": "Mid-level Developer",
+        "role": "Mid-Level FullStack Developer",
         "duration": "Jul 2025 - Present",
-        "description": "Responsible for developing and maintaining web applications, specifically in Renault Group's after-sales, as a full-stack developer."
+        "description": "Full-stack developer responsible for PVX (After-Sales 4.0) at Renault Brazil, a platform that digitized 100% of documentation across the entire national dealership network, reducing paper usage by 40+ tons/year. Sole developer on the team, managing complete development cycle, deployment, and maintenance. Lead innovation initiatives including monthly technical meetings (~30 people) and organizing the sector's first hackathon."
       }
     },
     "showMore": "Show more",
@@ -71,37 +83,58 @@
   },
   "services": {
     "title": "Services",
+    "aiAssistants": {
+      "title": "AI Assistants",
+      "description": "Development of personalized intelligent assistants to automate customer service, technical support, and business processes with modern API integration."
+    },
+    "aiAgents": {
+      "title": "AI Agents",
+      "description": "Creation of autonomous agents for data analysis, workflow automation, and intelligent real-time decision-making."
+    },
     "web": {
       "title": "Web Development",
-      "description": "Creation of scalable systems, REST APIs and robust solutions using Next.js, NestJS, MongoDB and AWS. Ideal for complex applications or cloud integrations."
+      "description": "Creation of scalable systems, robust REST APIs and complete solutions with Next.js, NestJS, MongoDB and AWS. Ideal for complex applications or cloud integrations."
     },
     "pwa": {
       "title": "Scalable PWAs",
-      "description": "Progressive web and mobile applications using Firebase, Next.js and integrated authentication. Perfect for MVPs or lean products."
+      "description": "Progressive applications for web and mobile with Firebase, Next.js and integrated authentication. Perfect for MVPs or lean products."
     },
     "company": {
-      "title": "Corporate Websites",
+      "title": "Institutional Websites",
       "description": "Beautiful, lightweight and objective websites for companies, professionals or local businesses, with good performance and basic SEO."
     },
     "hearing": {
-      "title": "Human-Centered Approach",
-      "description": "Empathetic communication, active listening, and a focus on turning ideas into personalized digital products. You speak, I translate into code."
+      "title": "Humanized Service",
+      "description": "Empathetic communication, active listening and focus on transforming ideas into personalized digital products. You speak, I translate into code."
     }
   },
   "projects": {
     "title": "Projects",
+    "viewAll": "View All Projects",
     "data": {
-      "scraper": {
-        "title": "Automations",
-        "description": "I build bridges between the scattered information on the web and the strategic value for your business. With expertise in automation and web scraping, I develop custom bots that navigate, extract, and structure data with high precision and efficiency.<br></br><br></br>Whether it's a CAPTCHA-protected site, a single-page application with infinite scrolling, or the need to collect millions of data points daily, I have the experience and the right tools for the job."
+      "automacoes": {
+        "title": "Automation & Web Scraping",
+        "descriptionShort": "Robust web scraping and large-scale automation solutions with complete ETL pipelines. Automated workflows for data extraction and integration using RAG for intelligent processing."
       },
       "renault": {
         "title": "Renault Store",
-        "description": "I actively participated in the development team for the \"Renault Store\", a large-scale e-commerce platform designed for selling new vehicles in several Latin American countries.<br></br><br></br>As part of the team, I collaborated on building a robust and scalable full-stack solution. My responsibilities included developing reusable front-end components with Next.js and Chakra UI, and implementing endpoints and business logic in the back-end API with Nest.js.<br></br><br></br>I worked directly with TypeScript across the entire stack to ensure code quality and maintainability, as well as assisting with the modeling and integration of the PostgreSQL database. The project required a special focus on internationalization (i18n) to adapt the shopping experience to each specific market."
+        "descriptionShort": "Automotive e-commerce platform for Brazilian and Argentine markets serving entire Renault network. Complete system with shopping cart, payment integration, online reservations and checkout."
       },
       "borala": {
         "title": "Bora Lá!",
-        "description": "I worked on the development of the \"Bora Lá\" project, a complete solution that includes an administrative dashboard and two mobile apps (PWAs). I was responsible for creating a unified and efficient experience for different user profiles.<br></br><br></br>On the front-end, I used Next.js to build both the control panel and the PWAs, ensuring performance and the ability to be installed on mobile phones. The interface was developed with Chakra UI to maintain visual consistency. For the back-end and infrastructure, I implemented an API with Nest.js and used Firebase services (like Authentication and Firestore) and Google Cloud Platform (GCP) to ensure scalability and data security."
+        "descriptionShort": "Gastronomic experiences marketplace with three integrated apps: mobile PWA, establishment platform and admin panel. Serverless architecture with real-time synchronization."
+      },
+      "notoria": {
+        "title": "Notória Seguros",
+        "descriptionShort": "Institutional website with headless CMS architecture allowing complete customization by non-technical teams. Dynamic management system via WordPress with SSG-optimized performance."
+      },
+      "chatbot": {
+        "title": "LhOVE Hub Assistant",
+        "descriptionShort": "Intelligent multi-channel virtual assistant (Telegram/WhatsApp) for agency customer service automation. RAG architecture with Gemini for contextualized responses based on vectorized knowledge base."
+      },
+      "jornada": {
+        "title": "Jornada",
+        "descriptionShort": "Tarot study and practice platform applying SOLID principles and design patterns. System with card annotations, photo-based spread capture and automated email reports."
       }
     }
   },
@@ -113,7 +146,7 @@
   "footer": {
     "text": "© 2025 Lívia Devolder. All rights reserved.",
     "links": {
-      "linkedin": "https://www.linkedin.com/in/livia-devolder-pinheiro/",
+      "linkedin": "https://www.linkedin.com/in/liviadevolder/",
       "github": "https://github.com/LiviaDevolder",
       "email": "mailto:liviadevolder@gmail.com"
     }

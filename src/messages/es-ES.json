@@ -43,27 +43,39 @@
     "experience": {
       "brq": {
         "title": "BRQ Digital Solutions",
-        "role": "Desarrolladora Trainee - Junior",
-        "duration": "Jun 2021 - Ago 2023",
-        "description": "Responsable de desarrollar y mantener aplicaciones web, específicamente en los e-commerces del Grupo Renault, como full-stack."
+        "role": "Desarrolladora Trainee Backend",
+        "duration": "Jul 2021 - Ago 2022",
+        "description": "Primera experiencia profesional desarrollando plataformas de e-commerce automotriz para Renault Group. Evolucioné rápidamente de backend TypeScript/NestJS a full-stack con React/Next.js, conquistando autonomía para ejecutar tareas independientemente. Trabajé en proyectos para mercados argentino y brasileño, comunicándome en español con stakeholders locales. Promovida a Junior después de 12 meses."
+      },
+      "brq-junior": {
+        "title": "BRQ Digital Solutions",
+        "role": "Desarrolladora Junior FullStack",
+        "duration": "Ago 2022 - Ago 2023",
+        "description": "Desarrollo full-stack para plataformas de e-commerce de Renault en mercados brasileño y argentino. Implementé features end-to-end incluyendo carrito de compras, integraciones con gateways de pago y sistemas de reserva online. Contribuí part-time a la app My Renault, colaborando con equipos de Francia y Rumania en ambiente internacional."
       },
       "clearsale": {
         "title": "ClearSale",
-        "role": "Desarrolladora Junior",
+        "role": "Desarrolladora Junior Backend",
         "duration": "Ago 2023 - Nov 2024",
-        "description": "Responsable de desarrollar y mantener aplicaciones web y servicios de scraping de plataformas como back-end."
+        "description": "Desarrollo de soluciones de protección de marca y ciberseguridad usando web scraping e IA para grandes empresas. Lideré implementación de sistema de reconocimiento visual con AWS Rekognition, entrenando modelos customizados que priorizaron automáticamente amenazas críticas, aumentando significativamente la eficiencia del equipo de seguridad. Arquitectura de microservicios con procesamiento distribuido en alto volumen de datos."
+      },
+      "borala-freelance": {
+        "title": "Bora Lá",
+        "role": "Desarrolladora Pleno FullStack - Freelancer",
+        "duration": "Jul 2024 - Jun 2025",
+        "description": "Reconstrucción completa de ecosistema multi-plataforma para marketplace de experiencias gastronómicas, desarrollando desde cero tres aplicaciones integradas: app mobile PWA para usuarios, plataforma para establecimientos y panel administrativo. Arquitectura serverless con Firebase y gestión completa del proyecto desde levantamiento de requisitos hasta entrega final."
       },
       "deal": {
         "title": "Deal Technologies",
-        "role": "Desarrolladora Pleno",
+        "role": "Desarrolladora Pleno FullStack",
         "duration": "Nov 2024 - Jul 2025",
-        "description": "Responsable de desarrollar y mantener aplicaciones web de diferentes clientes, como B3 y Porto Seguro."
+        "description": "Desarrollo full-stack en proyectos de consultoría para B3 y Porto Seguro. En B3, actué en la construcción de marketplace de créditos de carbono conectando iniciativas de captura con empresas emisoras. En Porto Seguro, trabajé en el sistema de cotización automatizada de seguros automotrices, evolucionando sistemas legados con tecnologías modernas."
       },
       "brq-2": {
         "title": "BRQ Digital Solutions",
-        "role": "Desarrolladora Pleno",
+        "role": "Desarrolladora Pleno FullStack",
         "duration": "Jul 2025 - Actualmente",
-        "description": "Responsable de desarrollar y mantener aplicaciones web, específicamente en el posventa del Grupo Renault, como full-stack."
+        "description": "Desarrolladora full-stack responsable por el PVX (Posventa 4.0) de Renault Brasil, plataforma que digitalizó 100% de la documentación en toda la red nacional de concesionarios, reduciendo uso de papel en 40+ toneladas/año. Única desarrolladora del equipo, gestionando ciclo completo de desarrollo, deploy y sustentación. Lidero iniciativas de innovación incluyendo reuniones técnicas mensuales (~30 personas) y organización del primer hackathon del sector."
       }
     },
     "showMore": "Ver más",
@@ -71,37 +83,58 @@
   },
   "services": {
     "title": "Servicios",
+    "aiAssistants": {
+      "title": "Asistentes de IA",
+      "description": "Desarrollo de asistentes inteligentes personalizados para automatizar atención al cliente, soporte técnico y procesos empresariales con integración de APIs modernas."
+    },
+    "aiAgents": {
+      "title": "Agentes de IA",
+      "description": "Creación de agentes autónomos para análisis de datos, automatización de workflows y toma de decisiones inteligentes en tiempo real."
+    },
     "web": {
       "title": "Desarrollo Web",
-      "description": "Creación de sistemas escalables, APIs REST y soluciones robustas con Next.js, NestJS, MongoDB y AWS. Ideal para aplicaciones complejas o integraciones en la nube."
+      "description": "Creación de sistemas escalables, APIs REST robustas y soluciones completas con Next.js, NestJS, MongoDB y AWS. Ideal para aplicaciones complejas o integraciones con la nube."
     },
     "pwa": {
       "title": "PWAs Escalables",
-      "description": "Aplicaciones web progresivas para web y móvil con Firebase, Next.js y autenticación integrada. Perfecto para MVPs o productos lean."
+      "description": "Aplicaciones progresivas para web y móvil con Firebase, Next.js y autenticación integrada. Perfecto para MVPs o productos lean."
     },
     "company": {
-      "title": "Sitios Web Corporativos",
-      "description": "Sitios web atractivos, ligeros y directos para empresas, profesionales o negocios locales, con buen rendimiento y SEO básico."
+      "title": "Sitios Institucionales",
+      "description": "Sitios web bonitos, livianos y objetivos para empresas, profesionales o negocios locales, con buen rendimiento y SEO básico."
     },
     "hearing": {
-      "title": "Atención Personalizada",
+      "title": "Atención Humanizada",
       "description": "Comunicación empática, escucha activa y enfoque en transformar ideas en productos digitales personalizados. Tú hablas, yo lo traduzco a código."
     }
   },
   "projects": {
     "title": "Proyectos",
+    "viewAll": "Ver Todos los Proyectos",
     "data": {
-      "scraper": {
-        "title": "Automatizaciones",
-        "description": "Construyo puentes entre la información dispersa en la web y el valor estratégico para tu negocio. Con experiencia en automatización y web scraping, desarrollo bots a medida que navegan, extraen y estructuran datos con alta precisión y eficiencia.<br></br><br></br>Ya sea un sitio protegido por CAPTCHAs, una aplicación de página única (SPA) con scroll infinito o la necesidad de recopilar millones de puntos de datos diariamente, tengo la experiencia y las herramientas adecuadas para el trabajo."
+      "automacoes": {
+        "title": "Automatización & Web Scraping",
+        "descriptionShort": "Soluciones robustas de web scraping y automatización a gran escala con pipelines ETL completos. Flujos de trabajo automatizados para extracción e integración de datos usando RAG para procesamiento inteligente."
       },
       "renault": {
         "title": "Tienda Renault",
-        "description": "Participé activamente en el equipo de desarrollo de la \"Tienda Renault\", una plataforma de e-commerce a gran escala diseñada para la venta de vehículos nuevos en varios países de América Latina.<br></br><br></br>Como parte del equipo, colaboré en la construcción de una solución full-stack robusta y escalable. Mis responsabilidades incluyeron el desarrollo de componentes reutilizables en el front-end con Next.js y Chakra UI, y la implementación de endpoints y lógicas de negocio en la API back-end con Nest.js.<br></br><br></br>Trabajé directamente con TypeScript en todo el stack para garantizar la calidad y la mantenibilidad del código, además de ayudar en el modelado e integración con la base de datos PostgreSQL. El proyecto requirió un enfoque especial en la internacionalización (i18n) para adaptar la experiencia de compra a cada mercado específico."
+        "descriptionShort": "Plataforma de e-commerce automotriz para mercados brasileño y argentino atendiendo toda la red Renault. Sistema completo con carrito, integración de pagos, reservas online y checkout."
       },
       "borala": {
-        "title": "¡Bora Lá!",
-        "description": "Trabajé en el desarrollo del proyecto \"¡Bora Lá!\", una solución completa que incluye un panel de administración y dos aplicaciones móviles (PWA). Fui responsable de crear una experiencia unificada y eficiente para diferentes perfiles de usuario.<br></br><br></br>En el front-end, utilicé Next.js para construir tanto el panel de control como las PWA, garantizando el rendimiento y la capacidad de instalación en dispositivos móviles. La interfaz se desarrolló con Chakra UI para mantener la consistencia visual. Para el back-end y la infraestructura, implementé una API con Nest.js y utilicé los servicios de Firebase (como Authentication y Firestore) y Google Cloud Platform (GCP) para garantizar la escalabilidad y la seguridad de los datos."
+        "title": "Bora Lá!",
+        "descriptionShort": "Marketplace de experiencias gastronómicas con tres apps integradas: PWA mobile, plataforma para establecimientos y panel administrativo. Arquitectura serverless con sincronización en tiempo real."
+      },
+      "notoria": {
+        "title": "Notória Seguros",
+        "descriptionShort": "Sitio institucional con arquitectura headless CMS permitiendo personalización completa por equipos no técnicos. Sistema de gestión dinámica vía WordPress con performance optimizada a través de SSG."
+      },
+      "chatbot": {
+        "title": "Asistente LhOVE Hub",
+        "descriptionShort": "Asistente virtual inteligente multi-canal (Telegram/WhatsApp) para automatización de atención de agencia. Arquitectura RAG con Gemini para respuestas contextualizadas basadas en knowledge base vectorizada."
+      },
+      "jornada": {
+        "title": "Jornada",
+        "descriptionShort": "Plataforma de estudio y práctica de tarot aplicando principios SOLID y design patterns. Sistema con anotaciones por carta, captura de tiradas vía foto y reportes automatizados por email."
       }
     }
   },
@@ -113,7 +146,7 @@
   "footer": {
     "text": "© 2025 Lívia Devolder. Todos los derechos reservados.",
     "links": {
-      "linkedin": "https://www.linkedin.com/in/livia-devolder-pinheiro/",
+      "linkedin": "https://www.linkedin.com/in/liviadevolder/",
       "github": "https://github.com/LiviaDevolder",
       "email": "mailto:liviadevolder@gmail.com"
     }

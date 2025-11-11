@@ -8,16 +8,15 @@ import {
 } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import NextImage, { StaticImageData } from "next/image";
+import { Bot, BrainCircuit, Code, Smartphone, Globe, HeartHandshake } from "lucide-react";
 import Profile from "../../public/profile.png";
-import Scraper from "../../public/projects/scraper.png";
+import Automacoes from "../../public/projects/automacoes.png";
 import Renault from "../../public/projects/renault.png";
 import BoraLa from "../../public/projects/borala.png";
-import Computer from "../../public/computer.svg";
-import Phone from "../../public/phone.svg";
-import Company from "../../public/company.svg";
-import Ear from "../../public/ear.svg";
+import Notoria from "../../public/projects/notoria.png";
+import Chatbot from "../../public/projects/chatbot.png";
+import Jornada from "../../public/projects/jornada.png";
 import PurpleStar from "../../public/purple-star.svg";
-import GoldStar from "../../public/gold-star.svg";
 import Linkedin from "../../public/linkedin.svg";
 import Email from "../../public/email.svg";
 import Github from "../../public/github.svg";
@@ -25,6 +24,8 @@ import Badge from "@/components/Badge";
 import Card from "@/components/Card";
 import Education from "@/components/Education";
 import Navigation from "@/components/Navigation";
+import ServiceCard from "@/components/ServiceCard";
+import ProjectCard from "@/components/ProjectCard";
 import { EDUCATION_VARIANT_TYPE, PROJECTS_TYPE, ProjectsType } from "@/enum";
 import { ReactNode, useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
@@ -45,13 +46,16 @@ const Tab = dynamic(() => import("@/components/Tab"), {
 interface IProjects {
   title: string;
   image: StaticImageData;
-  description: ReactNode;
+  description: string;
   badges: string[];
+  githubUrl?: string;
+  demoUrl?: string;
 }
 
 export default function Home() {
   const t = useTranslations();
   const [showAllExperiences, setShowAllExperiences] = useState(false);
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   useEffect(() => {
     document.title = t("metadata.title");
@@ -61,10 +65,6 @@ export default function Home() {
       descriptionMeta.setAttribute("content", t("metadata.description"));
     }
   }, [t]);
-
-  const [selectedProject, setSelectedProject] = useState<ProjectsType>(
-    PROJECTS_TYPE.SCRAPER
-  );
 
   const experiences = useMemo(
     () => [
@@ -99,6 +99,21 @@ export default function Home() {
         ],
       },
       {
+        key: "borala-freelance",
+        title: t("about.experience.borala-freelance.title"),
+        description: t("about.experience.borala-freelance.description"),
+        role: t("about.experience.borala-freelance.role"),
+        duration: t("about.experience.borala-freelance.duration"),
+        badges: [
+          "TypeScript",
+          "Firebase",
+          "Nest.js",
+          "Next.js",
+          "Chakra UI",
+          "PWA",
+        ],
+      },
+      {
         key: "clearsale",
         title: t("about.experience.clearsale.title"),
         description: t("about.experience.clearsale.description"),
@@ -108,9 +123,24 @@ export default function Home() {
           "TypeScript",
           "MongoDB",
           "Terraform",
-          "AWS",
-          "APIfy",
+          "AWS Rekognition",
+          "Apify",
           "Node.js",
+        ],
+      },
+      {
+        key: "brq-junior",
+        title: t("about.experience.brq-junior.title"),
+        description: t("about.experience.brq-junior.description"),
+        role: t("about.experience.brq-junior.role"),
+        duration: t("about.experience.brq-junior.duration"),
+        badges: [
+          "TypeScript",
+          "React",
+          "PostgreSQL",
+          "Nest.js",
+          "Next.js",
+          "Chakra UI",
         ],
       },
       {
@@ -121,11 +151,11 @@ export default function Home() {
         duration: t("about.experience.brq.duration"),
         badges: [
           "TypeScript",
-          "CSS",
+          "Node.js",
           "PostgreSQL",
           "Nest.js",
+          "React",
           "Next.js",
-          "Chakra UI",
         ],
       },
     ],
@@ -136,57 +166,59 @@ export default function Home() {
     ? experiences
     : experiences.slice(0, 2);
 
-  const projectsRecord: Record<ProjectsType, IProjects> = useMemo(
+  const projects: Record<ProjectsType, IProjects> = useMemo(
     () => ({
-      [PROJECTS_TYPE.SCRAPER]: {
-        title: t("projects.data.scraper.title"),
-        image: Scraper,
-        description: t.rich("projects.data.scraper.description", {
-          br: () => <br />,
-        }),
-        badges: [
-          "Puppeteer",
-          "Playwright",
-          "Cheerio",
-          "Crawlee",
-          "Apify",
-          "Axios",
-        ],
+      [PROJECTS_TYPE.AUTOMACOES]: {
+        title: t("projects.data.automacoes.title"),
+        description: t("projects.data.automacoes.descriptionShort"),
+        image: Automacoes,
+        badges: ["Node.js", "Playwright", "Puppeteer", "n8n", "Crawlee", "Apify"],
       },
       [PROJECTS_TYPE.RENAULT]: {
         title: t("projects.data.renault.title"),
+        description: t("projects.data.renault.descriptionShort"),
         image: Renault,
-        description: t.rich("projects.data.renault.description", {
-          br: () => <br />,
-        }),
-        badges: [
-          "TypeScript",
-          "CSS",
-          "PostgreSQL",
-          "Nest.js",
-          "Next.js",
-          "Chakra UI",
-        ],
+        badges: ["TypeScript", "Next.js", "NestJS", "PostgreSQL", "Payment Gateways"],
+        demoUrl: "https://loja.renault.com",
       },
       [PROJECTS_TYPE.BORALA]: {
         title: t("projects.data.borala.title"),
+        description: t("projects.data.borala.descriptionShort"),
         image: BoraLa,
-        description: t.rich("projects.data.borala.description", {
-          br: () => <br />,
-        }),
-        badges: [
-          "TypeScript",
-          "Vercel",
-          "Firebase",
-          "Google Cloud Plataform",
-          "Nest.js",
-          "Next.js",
-          "Chakra UI",
-        ],
+        badges: ["NestJS", "Next.js", "Chakra UI", "Firebase", "PWA"],
+      },
+      [PROJECTS_TYPE.NOTORIA]: {
+        title: t("projects.data.notoria.title"),
+        description: t("projects.data.notoria.descriptionShort"),
+        image: Notoria,
+        badges: ["Next.js", "TypeScript", "WordPress", "Headless CMS", "Vercel"],
+        demoUrl: "https://notoriaseguros.com",
+      },
+      [PROJECTS_TYPE.CHATBOT]: {
+        title: t("projects.data.chatbot.title"),
+        description: t("projects.data.chatbot.descriptionShort"),
+        image: Chatbot,
+        badges: ["n8n", "Gemini", "RAG", "Telegram API", "WhatsApp API"],
+      },
+      [PROJECTS_TYPE.JORNADA]: {
+        title: t("projects.data.jornada.title"),
+        description: t("projects.data.jornada.descriptionShort"),
+        image: Jornada,
+        badges: ["NestJS", "Next.js", "Chakra UI", "PostgreSQL", "Email Automation"],
+        githubUrl: "https://github.com/LiviaDevolder/jornada",
       },
     }),
     [t]
   );
+
+  const projectsArray = Object.entries(projects).map(([key, value]) => ({
+    key,
+    ...value,
+  }));
+
+  const displayedProjects = showAllProjects
+    ? projectsArray
+    : projectsArray.slice(0, 4);
 
   return (
     <Flex
@@ -442,80 +474,71 @@ export default function Home() {
           >
             {t("services.title")}
           </Text>
-          <Flex
-            color={{ base: "blue", _dark: "white" }}
-            flexDir={{
-              base: "column",
-              sm: "column",
-              md: "column",
-              lg: "row",
-              xl: "row",
+
+          {/* Services Grid */}
+          <Box
+            display="grid"
+            gridTemplateColumns={{
+              base: "1fr",
+              md: "repeat(2, 1fr)",
+              lg: "repeat(3, 1fr)",
             }}
-            gap={"12px"}
-            alignItems={"center"}
+            gap={6}
           >
-            <Flex flexDir={"column"} gap={"16px"} maxW={"100%"}>
-              <Flex gap={"8px"} alignItems={"center"}>
-                <Flex>
-                  <Computer />
-                </Flex>
-                <Text fontFamily={"display"} fontSize={"xl"}>
-                  {t("services.web.title")}
-                </Text>
-              </Flex>
-              <Text fontFamily={"body"} fontSize={"md"}>
-                {t("services.web.description")}
-              </Text>
-            </Flex>
-            <Flex>
-              <GoldStar />
-            </Flex>
-            <Flex flexDir={"column"} gap={"16px"} maxW={"100%"}>
-              <Flex gap={"8px"} alignItems={"center"}>
-                <Flex>
-                  <Phone />
-                </Flex>
-                <Text fontFamily={"display"} fontSize={"xl"}>
-                  {t("services.pwa.title")}
-                </Text>
-              </Flex>
-              <Text fontFamily={"body"} fontSize={"md"}>
-                {t("services.pwa.description")}
-              </Text>
-            </Flex>
-            <Flex>
-              <GoldStar />
-            </Flex>
-            <Flex flexDir={"column"} gap={"16px"} maxW={"100%"}>
-              <Flex gap={"8px"} alignItems={"center"}>
-                <Flex>
-                  <Company />
-                </Flex>
-                <Text fontFamily={"display"} fontSize={"xl"}>
-                  {t("services.company.title")}
-                </Text>
-              </Flex>
-              <Text fontFamily={"body"} fontSize={"md"}>
-                {t("services.company.description")}
-              </Text>
-            </Flex>
-            <Flex>
-              <GoldStar />
-            </Flex>
-            <Flex flexDir={"column"} gap={"16px"} maxW={"100%"}>
-              <Flex gap={"8px"} alignItems={"center"}>
-                <Flex>
-                  <Ear />
-                </Flex>
-                <Text fontFamily={"display"} fontSize={"xl"}>
-                  {t("services.hearing.title")}
-                </Text>
-              </Flex>
-              <Text fontFamily={"body"} fontSize={"md"}>
-                {t("services.hearing.description")}
-              </Text>
-            </Flex>
-          </Flex>
+            {/* AI Assistants */}
+            <ServiceCard
+              icon={Bot}
+              iconColor="gold"
+              iconSize={28}
+              title={t("services.aiAssistants.title")}
+              description={t("services.aiAssistants.description")}
+              badges={["Gemini", "Docling", "RAG"]}
+              isSpecialty={true}
+            />
+
+            {/* Web Development */}
+            <ServiceCard
+              icon={Code}
+              iconColor="gold"
+              iconSize={28}
+              title={t("services.web.title")}
+              description={t("services.web.description")}
+              badges={["Next.js", "NestJS", "GCP/AWS"]}
+              isSpecialty={true}
+            />
+
+            {/* AI Agents */}
+            <ServiceCard
+              icon={BrainCircuit}
+              title={t("services.aiAgents.title")}
+              description={t("services.aiAgents.description")}
+              badges={["n8n", "CrewAI", "FastAPI"]}
+            />            
+
+            {/* PWA Applications */}
+            <ServiceCard
+              icon={Smartphone}
+              title={t("services.pwa.title")}
+              description={t("services.pwa.description")}
+              badges={["PWA", "Firebase", "Next.js"]}
+            />
+
+            {/* Institutional Sites */}
+            <ServiceCard
+              icon={Globe}
+              title={t("services.company.title")}
+              description={t("services.company.description")}
+              badges={["WordPress", "SEO", "Analytics"]}
+            />
+
+            {/* Humanized Support */}
+            <ServiceCard
+              icon={HeartHandshake}
+              title={t("services.hearing.title")}
+              description={t("services.hearing.description")}
+              badges={["Consultoria", "Estratégia", "UX/UI"]}
+            />
+          </Box>
         </Flex>
         {/* Projects */}
         <Flex
@@ -537,65 +560,45 @@ export default function Home() {
           >
             {t("projects.title")}
           </Text>
-          <Flex
-            width={"100%"}
-            flexDirection={{
-              base: "column",
-              sm: "column",
-              md: "column",
-              lg: "row",
-              xl: "row",
-            }}
-            gap={"24px"}
-          >
-            <Flex flexDir={"column"} gap={"12px"}>
-              {Object.entries(projectsRecord).map(([key, project]) => (
-                <Tab
-                  key={key}
-                  active={key === selectedProject}
-                  onClick={() => setSelectedProject(key as ProjectsType)}
-                >
-                  {project.title}
-                </Tab>
-              ))}
-            </Flex>
-            <Flex
-              width={"100%"}
-              gap={"24px"}
-              flexWrap="wrap"
-              alignItems="flex-start"
-            >
-              <Flex
-                flex="1 1 400px"
-                maxWidth={{ base: "100%", xl: "610px" }}
-                minWidth={{ base: "100%", md: "320px" }}
-                w={{ base: "100%", md: "auto" }}
-              >
-                <NextImage
-                  src={projectsRecord[selectedProject].image}
-                  alt={projectsRecord[selectedProject].title}
-                  width={610}
-                  height={400}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 610px"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                  }}
-                />
-              </Flex>
 
-              <Flex flexDir={"column"} gap={"12px"} flex="1 1 400px" w={"auto"}>
-                <Text color={{ base: "blue", _dark: "white" }}>
-                  {projectsRecord[selectedProject].description}
-                </Text>
-                <Flex flexWrap={"wrap"} gap={"8px"}>
-                  {projectsRecord[selectedProject].badges.map((badge) => (
-                    <Badge key={badge}>{badge}</Badge>
-                  ))}
-                </Flex>
-              </Flex>
-            </Flex>
-          </Flex>
+          {/* Projects Grid */}
+          <Box
+            display="grid"
+            gridTemplateColumns={{
+              base: "1fr",
+              lg: "repeat(2, 1fr)",
+            }}
+            gap={8}
+          >
+            {displayedProjects.map((project) => (
+              <ProjectCard
+                key={project.key}
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                badges={project.badges}
+                demoUrl={project.demoUrl}
+                githubUrl={project.githubUrl}
+              />
+            ))}
+          </Box>
+
+          {/* Collapsible Button */}
+          <Button
+            onClick={() => setShowAllProjects(!showAllProjects)}
+            variant="outline"
+            borderColor="gold"
+            color="gold"
+            w="100%"
+            _hover={{
+              bgColor: "gold",
+              color: "white",
+            }}
+            alignSelf="center"
+            mt={4}
+          >
+            {showAllProjects ? t("about.showLess") : t("about.showMore")}
+          </Button>
         </Flex>
       </Flex>
       {/* Footer */}
@@ -627,21 +630,40 @@ export default function Home() {
         >
           <Text color={"white"}>{t("footer.text")}</Text>
           <Flex gap={"12px"}>
-            <Linkedin
+            <a
+              href={t("footer.links.linkedin")}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={t("accessibility.linkedinProfile")}
-              role="button"
-              tabIndex={0}
-            />
-            <Email
+            >
+              <Linkedin
+                role="button"
+                tabIndex={0}
+                style={{ cursor: "pointer" }}
+              />
+            </a>
+            <a
+              href={t("footer.links.email")}
               aria-label={t("accessibility.sendEmail")}
-              role="button"
-              tabIndex={0}
-            />
-            <Github
+            >
+              <Email
+                role="button"
+                tabIndex={0}
+                style={{ cursor: "pointer" }}
+              />
+            </a>
+            <a
+              href={t("footer.links.github")}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={t("accessibility.githubProfile")}
-              role="button"
-              tabIndex={0}
-            />
+            >
+              <Github
+                role="button"
+                tabIndex={0}
+                style={{ cursor: "pointer" }}
+              />
+            </a>
           </Flex>
         </Flex>
       </Flex>

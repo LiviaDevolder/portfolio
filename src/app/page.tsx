@@ -28,7 +28,6 @@ import ServiceCard from "@/components/ServiceCard";
 import ProjectCard from "@/components/ProjectCard";
 import { EDUCATION_VARIANT_TYPE, PROJECTS_TYPE, ProjectsType } from "@/enum";
 import { useEffect, useMemo, useState } from "react";
-import dynamic from "next/dynamic";
 
 interface IProjects {
   title: string;

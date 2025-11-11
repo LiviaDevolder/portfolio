@@ -27,21 +27,8 @@ import Navigation from "@/components/Navigation";
 import ServiceCard from "@/components/ServiceCard";
 import ProjectCard from "@/components/ProjectCard";
 import { EDUCATION_VARIANT_TYPE, PROJECTS_TYPE, ProjectsType } from "@/enum";
-import { ReactNode, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
-
-// Dynamic import for Tab component (non-critical)
-const Tab = dynamic(() => import("@/components/Tab"), {
-  loading: () => (
-    <div
-      style={{
-        height: "48px",
-        backgroundColor: "#f0f0f0",
-        borderRadius: "4px",
-      }}
-    />
-  ),
-});
 
 interface IProjects {
   title: string;

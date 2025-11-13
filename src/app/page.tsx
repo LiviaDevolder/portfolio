@@ -1,14 +1,16 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  Flex,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { useTranslations } from "next-intl";
 import NextImage, { StaticImageData } from "next/image";
-import { Bot, BrainCircuit, Code, Smartphone, Globe, HeartHandshake } from "lucide-react";
+import {
+  Bot,
+  BrainCircuit,
+  Code,
+  Smartphone,
+  Globe,
+  HeartHandshake,
+} from "lucide-react";
 import Profile from "../../public/profile.png";
 import Automacoes from "../../public/projects/automacoes.png";
 import Renault from "../../public/projects/renault.png";
@@ -158,13 +160,26 @@ export default function Home() {
         title: t("projects.data.automacoes.title"),
         description: t("projects.data.automacoes.descriptionShort"),
         image: Automacoes,
-        badges: ["Node.js", "Playwright", "Puppeteer", "n8n", "Crawlee", "Apify"],
+        badges: [
+          "Node.js",
+          "Playwright",
+          "Puppeteer",
+          "n8n",
+          "Crawlee",
+          "Apify",
+        ],
       },
       [PROJECTS_TYPE.RENAULT]: {
         title: t("projects.data.renault.title"),
         description: t("projects.data.renault.descriptionShort"),
         image: Renault,
-        badges: ["TypeScript", "Next.js", "NestJS", "PostgreSQL", "Payment Gateways"],
+        badges: [
+          "TypeScript",
+          "Next.js",
+          "NestJS",
+          "PostgreSQL",
+          "Payment Gateways",
+        ],
         demoUrl: "https://loja.renault.com",
       },
       [PROJECTS_TYPE.BORALA]: {
@@ -177,7 +192,13 @@ export default function Home() {
         title: t("projects.data.notoria.title"),
         description: t("projects.data.notoria.descriptionShort"),
         image: Notoria,
-        badges: ["Next.js", "TypeScript", "WordPress", "Headless CMS", "Vercel"],
+        badges: [
+          "Next.js",
+          "TypeScript",
+          "WordPress",
+          "Headless CMS",
+          "Vercel",
+        ],
         demoUrl: "https://notoriaseguros.com",
       },
       [PROJECTS_TYPE.CHATBOT]: {
@@ -190,7 +211,13 @@ export default function Home() {
         title: t("projects.data.jornada.title"),
         description: t("projects.data.jornada.descriptionShort"),
         image: Jornada,
-        badges: ["NestJS", "Next.js", "Chakra UI", "PostgreSQL", "Email Automation"],
+        badges: [
+          "NestJS",
+          "Next.js",
+          "Chakra UI",
+          "PostgreSQL",
+          "Email Automation",
+        ],
         githubUrl: "https://github.com/LiviaDevolder/jornada",
       },
     }),
@@ -252,6 +279,7 @@ export default function Home() {
             alt={t("accessibility.profileImage")}
             priority
             sizes="(max-width: 768px) 100vw, 350px"
+            style={{ borderRadius: "16px" }}
           />
           <Flex flexDir={"column"} maxW={"576px"} gap={{ base: 4, lg: 4 }}>
             <Flex flexDir={"column"} gap={3}>
@@ -499,7 +527,7 @@ export default function Home() {
               title={t("services.aiAgents.title")}
               description={t("services.aiAgents.description")}
               badges={["n8n", "CrewAI", "FastAPI"]}
-            />            
+            />
 
             {/* PWA Applications */}
             <ServiceCard
@@ -632,11 +660,7 @@ export default function Home() {
               href={t("footer.links.email")}
               aria-label={t("accessibility.sendEmail")}
             >
-              <Email
-                role="button"
-                tabIndex={0}
-                style={{ cursor: "pointer" }}
-              />
+              <Email role="button" tabIndex={0} style={{ cursor: "pointer" }} />
             </a>
             <a
               href={t("footer.links.github")}

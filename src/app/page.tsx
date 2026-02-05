@@ -311,7 +311,7 @@ export default function Home() {
               <Badge>Cloud</Badge>
               <Badge>AI</Badge>
             </Flex>
-            <Flex mt={4}>
+            <Flex mt={4} gap={"8px"}>
               <a
                 href="https://www.credly.com/badges/0694c04b-48cc-4ccc-9e4b-26a8326e681f/public_url"
                 target="_blank"
@@ -342,7 +342,7 @@ export default function Home() {
                 aria-label="Google Associate Cloud Engineer Certification Badge"
               >
                 <NextImage
-                  src="https://images.credly.com/size/340x340/images/08096465-cbfc-4c3e-93e5-93c5aa61f23e/blob"
+                  src="/associate-cloud-engineer-certification.png"
                   alt="Google Associate Cloud Engineer Certification"
                   width={60}
                   height={60}

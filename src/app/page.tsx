@@ -313,7 +313,7 @@ export default function Home() {
             </Flex>
             <Flex mt={4}>
               <a
-                href="https://www.credly.com/badges/0694c04b-48cc-4ccc-9e4b-26a8326e681f"
+                href="https://www.credly.com/badges/0694c04b-48cc-4ccc-9e4b-26a8326e681f/public_url"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Linux Essentials Certification Badge"
@@ -321,6 +321,29 @@ export default function Home() {
                 <NextImage
                   src="https://images.credly.com/size/340x340/images/009defc4-25a0-4d6f-8b2d-7fac9c7362f1/blob"
                   alt="Linux Essentials Certification"
+                  width={60}
+                  height={60}
+                  style={{
+                    cursor: "pointer",
+                    transition: "transform 0.2s ease",
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
+                />
+              </a>
+              <a
+                href="https://www.credly.com/badges/ce2183b5-2e87-4a46-97f8-b86bca7b96a2/public_url"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google Associate Cloud Engineer Certification Badge"
+              >
+                <NextImage
+                  src="https://images.credly.com/size/340x340/images/08096465-cbfc-4c3e-93e5-93c5aa61f23e/blob"
+                  alt="Google Associate Cloud Engineer Certification"
                   width={60}
                   height={60}
                   style={{

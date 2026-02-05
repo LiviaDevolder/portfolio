@@ -129,8 +129,8 @@
         "descriptionShort": "Site institucional com arquitetura headless CMS permitindo customização completa por equipes não-técnicas. Sistema de gerenciamento dinâmico via WordPress com performance otimizada através de SSG."
       },
       "chatbot": {
-        "title": "Assistente LhOVE Hub",
-        "descriptionShort": "Assistente virtual inteligente multi-canal (Telegram/WhatsApp) para automação de atendimento de agência. Arquitetura RAG com Gemini para respostas contextualizadas baseadas em knowledge base vetorizada."
+        "title": "Assistente Dex",
+        "descriptionShort": "Assistente virtual inteligente multi-canal (Telegram/WhatsApp) para automação de atendimento de empresas. Arquitetura RAG com Gemini para respostas contextualizadas baseadas em knowledge base vetorizada."
       },
       "jornada": {
         "title": "Jornada",
